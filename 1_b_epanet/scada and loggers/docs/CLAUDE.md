@@ -1,238 +1,528 @@
-# CLAUDE.md
+# Real-Time Dynamic Water Network Monitoring System (RTDWMS)
+## Production-Ready Digital Twin for Jordanian Water Distribution Networks
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+---
 
-## Project Overview
+## 🎯 System Objective
 
-Real-Time Dynamic Water Network Monitoring System (RTDWMS) - A production-ready digital twin for water distribution networks in Jordan. The system simulates SCADA behavior, runs real-time hydraulic computations using EPANET (via EPyT), detects anomalies, and provides an interactive React dashboard.
+To develop a **production-ready digital twin** for a water distribution network in Jordan, capable of:
 
-## Architecture
+* **Monitoring network status** - Real-time monitoring of water network health
+* **Detecting anomalies** - Identifying leaks, pressure drops, flow issues, and other problems
+* **Providing forecasting** - Predicting future network behavior and demand patterns
+* **Alerting operators** - Notifying when problems occur or are predicted
+* **Simulating SCADA data** - Generating realistic sensor data for testing and development
+* **Running hydraulic analysis** - Using EPANET for physics-based network modeling
+* **Interactive dashboard** - Modern web interface for visualization and control
 
-### Full-Stack Structure
-- **Backend**: FastAPI (Python) - REST API + WebSockets, runs on port 8000
-- **Frontend**: React 18 + TypeScript + Vite, runs on port 5173 (dev)
-- **Database**: SQLite at `data/monitoring.db` (production will use PostgreSQL)
-- **Hydraulics Engine**: EPyT (EPANET-Python Toolkit)
-- **Network Files**: EPANET `.inp` files in `networks/` directory
+### **Core Value Proposition**
+The system's main value is **anomaly detection and monitoring**, not just data generation. It compares what sensors measure vs what EPANET predicts to identify problems in the water network.
 
-### Backend Architecture (`backend/`)
-```
-backend/
-├── main.py              # FastAPI app initialization, CORS, router registration
-├── config.py            # System-wide configuration (paths, thresholds, settings)
-├── init_db.py           # Database initialization utility
-├── api/                 # REST API endpoints
-│   ├── network.py       # Network upload, info, status endpoints
-│   └── scada.py         # SCADA simulator control endpoints
-├── models/              # Database layer
-│   ├── database.py      # SQLAlchemy engine and session management
-│   └── tables.py        # Database tables: SCADAReading, SCADASimulatorConfig,
-│                        #                 MonitoringResult, NetworkComponent
-└── services/            # Business logic
-    ├── network_loader.py    # EPyT network loading and parsing (singleton)
-    ├── network_state.py     # Global network state management
-    └── scada_simulator.py   # Async SCADA data generator (singleton)
-```
+## 🎯 **Agreed System Logic (Critical for Implementation)**
 
-### Frontend Architecture (`frontend/`)
-```
-frontend/src/
-├── main.tsx             # App entry point
-├── App.tsx              # Main application with routing
-├── api/                 # API client layer
-│   ├── client.ts        # Axios HTTP client with baseURL
-│   ├── network.ts       # Network API calls
-│   └── scada.ts         # SCADA API calls
-└── components/          # React components
-    ├── Dashboard.tsx        # Main monitoring dashboard
-    ├── NetworkUpload.tsx    # File upload interface
-    ├── NetworkInfo.tsx      # Network summary display
-    └── NetworkViewer.tsx    # Plotly.js network visualization
-```
+### **The Correct Approach:**
+1. **Upload network file** → Parse EPANET .inp file
+2. **Establish baseline** → Run hydraulic analysis with **original network design conditions** (from .inp file)
+3. **Get base pressure values** → Extract baseline pressures, flows, and tank levels
+4. **Generate realistic SCADA data** → Simulate sensor readings based on baseline + time-of-day variations
+5. **Monitor for major drifts** → Compare current SCADA readings vs baseline to detect anomalies
 
-### Key Design Patterns
+### **Key Implementation Requirements:**
+- **True Baseline**: Use original network design conditions from .inp file, not estimated demands
+- **Drift Detection**: Compare current readings against established baseline
+- **Anomaly Thresholds**: Flag deviations >10% for pressure, >15% for flow
+- **Real-time Monitoring**: Continuous comparison of measured vs baseline values
+- **Alert System**: Notify operators when anomalies are detected
 
-**Singleton Pattern**: Both `NetworkLoader` and `SCADASimulator` use singleton pattern via global module instances (`network_state.network_loader`, `scada_simulator`)
+### **Critical Success Factors:**
+- **Baseline Establishment**: Must use original network design, not estimated demands
+- **Independent Monitoring**: SCADA data generation must be independent of monitoring logic
+- **Accurate Comparison**: Monitoring engine must compare measured vs baseline, not predicted vs measured
+- **Logical Flow**: Upload → Baseline → Generate Data → Monitor Drifts → Alert
 
-**Global State**: `network_state` module provides shared access to the loaded EPANET network across all services
+---
 
-**Async Background Tasks**: SCADA simulator runs as an asyncio background task generating sensor data at configurable intervals
-
-**Database Session Management**: Uses SQLAlchemy with `SessionLocal()` context managers for thread-safe database access
-
-## Common Development Commands
+## 🏗️ Technology Stack
 
 ### Backend (Python)
+- **FastAPI** - Modern, high-performance web framework
+- **EPyT** - EPANET hydraulic simulations
+- **SQLAlchemy** - Database ORM
+- **PostgreSQL/SQLite** - Time-series data storage
+- **WebSockets** - Real-time data streaming
+- **Pydantic** - Data validation
+- **asyncio** - Asynchronous operations
+- **Pandas** - Data processing and synchronization
 
-**Environment Setup:**
-```bash
-cd backend
-python -m venv venv  # or use existing venv in parent dir
-source venv/bin/activate  # or: venv/bin/activate (Linux/Mac)
-pip install -r requirements.txt
-```
+### Frontend (React/TypeScript)
+- **React 18** - Modern UI framework
+- **TypeScript** - Type safety
+- **Vite** - Fast build tool
+- **Plotly.js** - Interactive network visualization
+- **Recharts** - Time-series charts
+- **TanStack Query** - Data fetching/caching
+- **Zustand** - State management
+- **TailwindCSS** - Styling
+- **Axios** - HTTP client
 
-**Run Backend Server:**
-```bash
-cd backend
-python main.py
-# Server runs on http://localhost:8000
-# API docs at http://localhost:8000/docs
-```
+---
 
-**Initialize Database:**
-```bash
-cd backend
-python init_db.py
-```
+## 🧩 High-Level System Components
 
-**Database Location:**
-- SQLite database: `data/monitoring.db`
-- Created automatically on first run if missing
-- Tables: scada_readings, scada_simulator_config, monitoring_results, network_components
+### 1. **React Frontend Application**
+- Modern, responsive web interface
+- Real-time network visualization with Plotly.js
+- Interactive dashboards and controls
+- Mobile-friendly design
 
-### Frontend (React + TypeScript)
+### 2. **FastAPI Backend Service**
+- RESTful API endpoints
+- WebSocket real-time communication
+- Background task processing
+- Database management
 
-**Environment Setup:**
-```bash
-cd frontend
-npm install
-```
+### 3. **Demand Forecasting Engine**
+- Time-of-day demand patterns
+- Historical data analysis
+- Seasonal adjustments
+- Weather-based corrections
 
-**Run Frontend Dev Server:**
-```bash
-cd frontend
-npm run dev
-# Server runs on http://localhost:5173
-```
+### 4. **SCADA Simulator** (Data Source)
+- Generates realistic sensor data (pressures, flows, tank levels, pump status)
+- Configurable variation patterns
+- Fault injection capabilities
+- Synchronized data generation
 
-**Build for Production:**
-```bash
-cd frontend
-npm run build
-# Output in frontend/dist/
-```
+### 5. **EPANET Monitoring Engine** (Core Analysis)
+- **Baseline simulation establishment** - Creates expected network behavior
+- **Real-time hydraulic analysis** - Runs EPANET with estimated demands
+- **Predicted values generation** - What the network SHOULD be doing
+- **Data quality assessment** - Validates sensor data quality
 
-**Lint Frontend:**
-```bash
-cd frontend
-npm run lint
-```
+### 6. **Anomaly Detection System** (Core Value)
+- **Pressure deviation analysis** - Compares measured vs predicted pressures
+- **Flow anomaly detection** - Identifies unusual flow patterns
+- **Data quality monitoring** - Flags sensor malfunctions
+- **Alert generation and prioritization** - Notifies operators of problems
 
-**Preview Production Build:**
-```bash
-cd frontend
-npm run preview
-```
+### 7. **Data Storage Layer**
+- PostgreSQL for production data
+- Time-series optimized storage
+- Data retention policies
+- Export capabilities
 
-### Full Stack Development
-
-**Start Both Services (in separate terminals):**
-```bash
-# Terminal 1 - Backend
-cd backend && python main.py
-
-# Terminal 2 - Frontend
-cd frontend && npm run dev
-```
-
-## Critical Technical Details
-
-### EPyT Network Loading
-- **Network files**: Place `.inp` files in `networks/` directory (Net1.inp, Net2.inp, Net3.inp available)
-- **Singleton instance**: `network_state.network_loader` is shared across all services
-- **Loading process**: Upload via API → saved to `temp/` → loaded into EPyT → network data extracted
-- **Global state check**: Always verify `network_state.is_loaded` before running simulations
-
-### SCADA Simulator Behavior
-- **Singleton instance**: `scada_simulator` (global in `scada_simulator.py`)
-- **Data generation**: Generates synthetic pressures (junctions), flows (pumps), levels (tanks)
-- **Update interval**: Configurable (default 30 seconds)
-- **State persistence**: Simulator running state stored in database (`scada_simulator_config.is_running`)
-- **Async loop**: Runs in background using `asyncio.create_task()`
-- **Start requirement**: Network must be loaded before starting simulator
-
-### Database Tables
-1. **scada_readings**: Timestamped sensor data (pressure/flow/level readings)
-2. **scada_simulator_config**: Simulator state and configuration (running status, intervals, variation %)
-3. **monitoring_results**: Anomaly detection results (baseline vs current, deviations)
-4. **network_components**: Parsed network topology (junctions, pipes, pumps, tanks)
-
-### Time Synchronization
-- **SCADA data**: Generated synchronously for all sensors at once
-- **Tolerance window**: ±5 seconds (MVP), will be ±30 seconds in production
-- **Missing data**: Last-known values used for missing sensors
-- **Stale data**: Flagged if >5 minutes old
-
-### API Endpoints Reference
-- `POST /api/network/upload` - Upload .inp network file
-- `GET /api/network/info` - Get loaded network summary
-- `GET /api/network/status` - Check if network is loaded
-- `POST /api/scada/start` - Start SCADA simulator
-- `POST /api/scada/stop` - Stop SCADA simulator
-- `GET /api/scada/status` - Get simulator status
-- `GET /api/scada/readings` - Get latest SCADA readings
-
-### Configuration Files
-- **Backend config**: `backend/config.py` - Database path, upload directory, thresholds
-- **Frontend API client**: `frontend/src/api/client.ts` - Backend base URL
-- **CORS**: Configured in `backend/main.py` for localhost:5173
-
-## Development Workflow
-
-### Adding New Network Types
-1. Add network parsing logic in `backend/services/network_loader.py`
-2. Update database schema in `backend/models/tables.py` if needed
-3. Add visualization support in `frontend/components/NetworkViewer.tsx`
-
-### Adding New Sensor Types
-1. Update `sensor_type` enum in `SCADAReading` model
-2. Add generation logic in `scada_simulator._generate_scada_data()`
-3. Update frontend display in Dashboard component
-
-### Anomaly Detection (Future)
-- Baseline values: From initial EPANET simulation
-- Detection logic: Compare real-time SCADA vs predicted EPANET values
-- Thresholds: Configurable in `config.py` (default: 10% pressure, 15% flow)
-- Results stored in: `monitoring_results` table
-
-## Data Flow
+## 🔄 System Data Flow (Corrected Logic)
 
 ```
-1. User uploads .inp file (Frontend → POST /api/network/upload)
-2. Backend loads network with EPyT (network_loader.load_network())
-3. Network topology stored in database (network_components table)
-4. User starts SCADA simulator (Frontend → POST /api/scada/start)
-5. Simulator generates data every 30s (scada_simulator._simulation_loop())
-6. Data stored in database (scada_readings table)
-7. Frontend polls for readings (GET /api/scada/readings)
-8. Dashboard displays real-time data with Plotly.js
+1. Network Upload → Parse EPANET .inp file
+2. Baseline Establishment → Run EPANET with original design conditions
+3. Baseline Storage → Store baseline pressures, flows, tank levels
+4. SCADA Simulator → Generate realistic sensor data based on baseline + variations
+5. Monitoring Engine → Compare current SCADA readings vs baseline
+6. Anomaly Detector → Flag when deviations exceed thresholds (>10% pressure, >15% flow)
+7. Alert System → Notify operators of detected anomalies
+8. Dashboard → Show network status and alerts
 ```
 
-## Important Notes
+**Key Insight**: The system's value is in **comparing measured vs baseline** to detect drifts from normal operation, not comparing measured vs predicted.
 
-- **Virtual Environment**: Use `venv/` in project root (already set up) or create new one
-- **Network State**: Shared globally via `network_state` module - NOT thread-local
-- **Async Safety**: SCADA simulator uses asyncio, ensure async/await patterns in new code
-- **Database Sessions**: Always use try/finally with SessionLocal() to prevent connection leaks
-- **EPANET Files**: Must be valid EPANET 2.2 format .inp files
-- **Temporary Files**: Uploaded networks stored in `temp/`, EPANET creates temporary files with pattern `en*`
+---
 
-## MVP Phase Focus
+## 📊 Current Implementation Status
 
-Current development is in MVP phase focusing on:
-- Basic network loading and visualization
-- Simple SCADA simulation with synthetic data
-- Fundamental anomaly detection (pressure deviations)
-- Functional web interface
-- Local development only (no authentication yet)
+### ✅ **Implemented Components**
+- **Network File Management** - Upload and parse EPANET .inp files
+- **SCADA Simulator** - Generate realistic sensor data with time-of-day patterns
+- **Demand Forecasting** - Time-based demand estimation
+- **EPANET Integration** - Run hydraulic simulations
+- **Basic Frontend** - React dashboard with network visualization
+- **Data Storage** - SQLite database with SCADA readings
 
-Production features planned for later:
-- User authentication & authorization
-- PostgreSQL database migration
-- Advanced anomaly detection algorithms
-- Real SCADA system integration
-- Demand forecasting engine
-- WebSocket real-time updates
-- Multi-network support
-- Scalability improvements
+### ❌ **Missing Core Components** (Critical for MVP)
+- **Baseline Establishment** - Run EPANET with original design conditions
+- **Monitoring Engine** - Compare measured vs baseline values
+- **Anomaly Detection System** - Flag deviations and problems
+- **Alert System** - Notify operators of issues
+- **Real-time Dashboard** - Show network status and alerts
+- **Drift Detection Logic** - The core value-add functionality
+
+### 🎯 **Next Priority: Baseline + Monitoring Engine**
+The system needs:
+1. **Baseline Establishment** - Run EPANET with original network design conditions
+2. **Baseline Storage** - Store baseline pressures, flows, tank levels
+3. **Monitoring Engine** - Compare current SCADA readings vs baseline
+4. **Drift Detection** - Flag when deviations exceed thresholds (10-15%)
+5. **Alert System** - Notify operators of detected anomalies
+6. **Dashboard** - Show network status and alerts
+
+---
+
+## ⚙️ Functional Requirements (FRs)
+
+### **FR1 – Network File Management**
+* The system shall allow users to upload EPANET `.inp` files via web interface
+* The system shall parse and extract all network components:
+  * Junctions with coordinates
+  * Pipes/Links with properties
+  * Pumps with characteristics
+  * Tanks/Reservoirs with dimensions
+* The system shall display network topology with interactive visualization
+* The system shall provide network summary statistics
+
+### **FR2 – Demand Forecasting System**
+* The system shall implement time-of-day demand patterns
+* The system shall support seasonal demand adjustments
+* The system shall provide demand estimation based on historical patterns
+* The system shall allow manual demand override capabilities
+* The system shall track demand estimation accuracy
+
+### **FR3 – SCADA Data Simulation**
+* The system shall generate realistic sensor data for:
+  * **Pressure sensors** at junctions (not demands - SCADA doesn't measure demands)
+  * **Flow meters** at instrumented pipe locations
+  * **Tank level sensors** at storage facilities
+  * **Pump status** and performance data
+* The system shall apply configurable noise and variation patterns
+* The system shall support fault injection for testing
+* The system shall maintain data synchronization within time windows
+
+### **FR4 – Real-Time Data Synchronization**
+* The system shall handle asynchronous SCADA data arrival
+* The system shall implement time window tolerance (±30 seconds for normal operation)
+* The system shall assess data quality and coverage
+* The system shall use last-known values for missing sensors
+* The system shall flag stale data (>5 minutes old)
+
+### **FR5 – EPANET Hydraulic Analysis**
+* The system shall run baseline EPANET simulation on network load
+* The system shall perform continuous hydraulic analysis with estimated demands
+* The system shall compare predicted vs measured pressures and flows
+* The system shall handle simulation failures gracefully
+* The system shall provide simulation performance metrics
+
+### **FR6 – Anomaly Detection & Analysis**
+* The system shall detect pressure deviations (>10% from predicted)
+* The system shall identify flow anomalies (>15% from predicted)
+* The system shall flag data quality issues (stale sensors, missing data)
+* The system shall prioritize anomalies by severity and location
+* The system shall provide anomaly confidence scores
+
+### **FR7 – Real-Time Monitoring Dashboard**
+* The system shall display live network status with color-coded components
+* The system shall show real-time pressure and flow charts
+* The system shall provide anomaly alerts and notifications
+* The system shall support multiple concurrent users
+* The system shall offer mobile-responsive interface
+
+### **FR8 – Data Management & Storage**
+* The system shall store all data with precise timestamps
+* The system shall implement data retention policies
+* The system shall provide data export capabilities (CSV, Excel)
+* The system shall support historical data queries
+* The system shall maintain data integrity and backup
+
+### **FR9 – Configuration Management**
+* The system shall provide web-based configuration interface
+* The system shall support configurable parameters:
+  * Simulation intervals (30s to 5min)
+  * Data quality thresholds
+  * Anomaly detection sensitivity
+  * Time synchronization windows
+* The system shall persist configuration settings
+* The system shall support configuration validation
+
+### **FR10 – System Monitoring & Logging**
+* The system shall log all major operations and errors
+* The system shall provide system health monitoring
+* The system shall track performance metrics
+* The system shall support remote diagnostics
+* The system shall implement graceful error recovery
+
+### **FR11 – User Management & Security**
+* The system shall support user authentication
+* The system shall implement role-based access control
+* The system shall provide audit trails
+* The system shall support secure API access
+* The system shall implement session management
+
+### **FR12 – Integration Capabilities**
+* The system shall provide RESTful API for external integration
+* The system shall support WebSocket connections for real-time data
+* The system shall offer data export APIs
+* The system shall support third-party SCADA system integration
+* The system shall provide webhook notifications
+
+---
+
+## ⚙️ Non-Functional Requirements (NFRs) - MVP Phase
+
+### **Basic Performance**
+* **Simulation Response Time**: <10 seconds (acceptable for pilot)
+* **Data Processing**: Handle 1 network with 50-100 nodes
+* **Concurrent Users**: 1-5 users (pilot demonstration)
+* **Database**: SQLite for simplicity (upgrade to PostgreSQL later)
+
+### **Basic Reliability**
+* **Uptime**: System should run for 8+ hours without restart
+* **Error Handling**: Graceful handling of EPANET failures
+* **Data Persistence**: Basic data storage and retrieval
+* **Recovery**: Manual restart capability
+
+### **Basic Security**
+* **No Authentication**: Open access for pilot (add later)
+* **Local Network**: Run on localhost/private network
+* **Basic Validation**: Input validation for file uploads
+
+### **Basic Usability**
+* **Simple Interface**: Clean, functional web interface
+* **Desktop Focus**: Optimized for desktop browsers
+* **Basic Documentation**: README and inline comments
+
+---
+
+## 🏗️ Production Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    React Frontend (Port 3000)                │
+│  ┌─────────────┬─────────────┬─────────────┬─────────────┐   │
+│  │  Dashboard  │  Network   │   SCADA     │ Monitoring  │   │
+│  │   Page      │   Config   │  Simulator  │   Page      │   │
+│  └─────────────┴─────────────┴─────────────┴─────────────┘   │
+└─────────────────────┬───────────────────────────────────────┘
+                      │ HTTP/REST + WebSocket
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│                FastAPI Backend (Port 8000)                  │
+│  ┌─────────────┬─────────────┬─────────────┬─────────────┐   │
+│  │   Network   │   SCADA     │ Monitoring  │    Data     │   │
+│  │    API      │    API      │    API      │    API      │   │
+│  └─────────────┴─────────────┴─────────────┴─────────────┘   │
+│  ┌─────────────┬─────────────┬─────────────┬─────────────┐   │
+│  │  Demand     │   SCADA     │ Monitoring  │  Anomaly    │   │
+│  │ Forecaster  │ Simulator   │   Engine    │  Detector   │   │
+│  └─────────────┴─────────────┴─────────────┴─────────────┘   │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│              PostgreSQL Database                            │
+│  ┌─────────────┬─────────────┬─────────────┬─────────────┐   │
+│  │   Network   │   SCADA     │ Monitoring  │  Anomalies  │   │
+│  │   Data      │  Readings   │  Results    │    Log      │   │
+│  └─────────────┴─────────────┴─────────────┴─────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🚀 Development Phases - Current Status
+
+### ✅ **Phase 1: Core Backend (COMPLETED)**
+- FastAPI project setup
+- SQLite database with basic models
+- EPyT network loader
+- Basic API endpoints (upload, info, status)
+- Simple demand forecasting
+
+### ✅ **Phase 2: Basic Frontend (COMPLETED)**
+- React + TypeScript setup
+- Basic layout and routing
+- Network file upload
+- Simple network visualization
+- API client integration
+
+### ✅ **Phase 3: SCADA Simulation (COMPLETED)**
+- Basic SCADA data generator
+- Simple time-of-day demand patterns
+- Database storage
+- Frontend controls (start/stop)
+
+### 🔄 **Phase 4: Monitoring Engine (IN PROGRESS - CRITICAL)**
+- **EPANET baseline simulation** ✅ (Implemented)
+- **Data comparison logic** ❌ (Missing - Core Value)
+- **Anomaly detection** ❌ (Missing - Core Value)
+- **Alert system** ❌ (Missing - Core Value)
+- **Frontend monitoring display** ❌ (Missing - Core Value)
+
+### ⏳ **Phase 5: Polish & Demo (PENDING)**
+- Error handling and logging
+- Basic data export
+- Testing with sample networks
+- Documentation and demo preparation
+
+## 🎯 **Immediate Next Steps (Priority Order)**
+
+### **1. Monitoring Engine (CRITICAL)**
+- Implement data comparison logic (measured vs predicted)
+- Add anomaly detection thresholds
+- Create alert generation system
+
+### **2. Real-time Dashboard**
+- Show network status with color-coded components
+- Display anomaly alerts and notifications
+- Real-time pressure and flow charts
+
+### **3. Testing & Validation**
+- Test with sample networks (Net1.inp, etc.)
+- Validate anomaly detection accuracy
+- Performance testing and optimization
+
+---
+
+## 🏗️ Technical Architecture Details
+
+### **Data Flow Architecture**
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   SCADA         │    │   Demand        │    │   EPANET        │
+│   Simulator     │───▶│   Forecaster    │───▶│   Engine        │
+│   (Measured)    │    │   (Estimates)   │    │   (Predicted)   │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                Monitoring Engine (MISSING)                     │
+│  • Compare measured vs predicted values                       │
+│  • Calculate deviation percentages                            │
+│  • Flag anomalies when thresholds exceeded                    │
+└─────────────────────────────────────────────────────────────────┘
+         │
+         ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Anomaly       │    │   Alert        │    │   Dashboard     │
+│   Detection     │───▶│   System       │───▶│   Display       │
+│   (Analysis)    │    │   (Alerts)     │    │   (Visualization)│
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+### **Key Implementation Files**
+- **`backend/services/baseline_engine.py`** - **MISSING** - Establish baseline from original design
+- **`backend/services/scada_simulator.py`** - Generates realistic sensor data based on baseline
+- **`backend/services/monitoring_engine.py`** - **MISSING** - Compare measured vs baseline
+- **`backend/services/anomaly_detector.py`** - **MISSING** - Drift detection and anomaly detection
+- **`backend/services/alert_system.py`** - **MISSING** - Alert generation and notification
+- **`backend/api/monitoring.py`** - **MISSING** - API endpoints for monitoring
+- **`frontend/src/components/MonitoringDashboard.tsx`** - **MISSING** - Real-time display
+
+### **Critical Implementation Order**
+1. **Baseline Engine** - Must be implemented first to establish reference point
+2. **Monitoring Engine** - Compare current readings vs baseline
+3. **Anomaly Detector** - Flag deviations beyond thresholds
+4. **Alert System** - Notify operators of problems
+5. **Dashboard** - Display network status and alerts
+
+---
+
+## 🔧 Key Technical Considerations - MVP
+
+### **Simplified Data Flow**
+- **Synchronized Generation**: SCADA simulator generates all data at once
+- **Basic Time Windows**: ±5 seconds tolerance (simulator controls timing)
+- **Simple Storage**: CSV files for data, SQLite for metadata
+- **Last-Known Values**: Basic caching for missing data
+
+### **SCADA Data Reality (Simplified)**
+- **Simulated SCADA**: Pressures, flows, tank levels, pump status
+- **Demand Estimation**: Simple time-of-day patterns (morning/evening peaks)
+- **Basic Comparison**: Predicted vs measured pressure differences
+- **Simple Alerts**: Flag deviations >10% from predicted values
+
+### **MVP Performance**
+- **Single Network**: Focus on one network file (Net1.inp)
+- **Basic Database**: SQLite with simple tables
+- **Local Development**: Run on localhost for simplicity
+- **Manual Controls**: Start/stop buttons for simulation
+
+---
+
+## 📊 MVP Success Metrics
+
+### **Technical Metrics**
+- **System Stability**: Runs for 8+ hours without crashes
+- **Response Time**: <10 seconds for hydraulic simulations
+- **Data Accuracy**: Basic anomaly detection works
+- **User Experience**: Functional web interface
+
+### **Demo Metrics**
+- **Network Loading**: Successfully load and visualize Net1.inp
+- **SCADA Simulation**: Generate realistic sensor data
+- **Anomaly Detection**: Detect pressure deviations
+- **Real-time Updates**: Show live data in dashboard
+
+---
+
+## 🎯 MVP Readiness Checklist
+
+- [ ] **Basic Functionality**: Upload network, run simulation, detect anomalies
+- [ ] **User Interface**: Clean, functional web interface
+- [ ] **Data Flow**: SCADA → EPANET → Comparison → Alerts
+- [ ] **Error Handling**: Graceful handling of common errors
+- [ ] **Documentation**: Basic README and setup instructions
+- [ ] **Testing**: Works with sample network files
+- [ ] **Demo Ready**: Can demonstrate core functionality
+
+---
+
+## 🚀 Next Steps - MVP Focus
+
+1. **Setup Development Environment**: Python venv, Node.js, basic tools
+2. **Backend MVP**: FastAPI + SQLite + EPyT integration
+3. **Frontend MVP**: React + basic components + API integration
+4. **Core Features**: Network upload, SCADA simulation, basic monitoring
+5. **Testing**: Test with Net1.inp and other sample networks
+6. **Demo Preparation**: Polish interface, add basic documentation
+7. **Future Growth**: Plan for production features (authentication, scaling, etc.)
+
+---
+
+## 📋 Project Summary
+
+### **What This System Does**
+A **Real-Time Water Network Monitoring System** that:
+- **Monitors** water network health in real-time
+- **Detects** problems like leaks, pressure drops, flow issues
+- **Alerts** operators when anomalies occur
+- **Forecasts** future network behavior and demand
+
+### **How It Works**
+1. **SCADA Simulator** generates realistic sensor data (what sensors measure)
+2. **Demand Forecaster** estimates water demand patterns
+3. **EPANET Engine** runs hydraulic simulation (what network SHOULD do)
+4. **Monitoring Engine** compares measured vs predicted values
+5. **Anomaly Detector** flags when differences exceed thresholds
+6. **Dashboard** shows operators network status and alerts
+
+### **Current Status**
+- ✅ **Data Generation**: SCADA simulator and demand forecasting work
+- ✅ **Hydraulic Analysis**: EPANET integration works
+- ❌ **Baseline Establishment**: No baseline from original design conditions
+- ❌ **Core Value**: Monitoring engine and drift detection missing
+- ❌ **User Interface**: Real-time monitoring dashboard missing
+
+### **Next Priority**
+Implement the **Baseline Engine** first, then the **Monitoring Engine** - the core value-add components that establish a reference point and detect drifts from normal operation.
+
+## 📝 **Critical Notes for Future Development**
+
+### **What We Agreed On:**
+1. **Baseline First**: Must establish baseline from original network design conditions
+2. **Drift Detection**: Compare current readings vs baseline, not predicted vs measured
+3. **Logical Flow**: Upload → Baseline → Generate Data → Monitor Drifts → Alert
+4. **Independent Components**: SCADA data generation must be independent of monitoring logic
+5. **True Monitoring**: System must detect when network drifts from normal operation
+
+### **What NOT to Do:**
+- Don't use estimated demands for baseline establishment
+- Don't compare predicted vs measured (circular logic)
+- Don't generate SCADA data based on monitoring results
+- Don't implement monitoring without first establishing baseline
+
+### **Implementation Priority:**
+1. **Baseline Engine** (Critical - establishes reference point)
+2. **Monitoring Engine** (Core value - detects drifts)
+3. **Anomaly Detector** (Flags problems)
+4. **Alert System** (Notifies operators)
+5. **Dashboard** (Shows status)
+
+---

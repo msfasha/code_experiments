@@ -6,6 +6,7 @@ import uvicorn
 # Import API routers
 from api.network import router as network_router
 from api.scada import router as scada_router
+from api.monitoring import router as monitoring_router
 
 # Import database models to ensure they're registered
 from models.database import Base, engine
@@ -59,7 +60,8 @@ async def api_status():
             "docs": "/docs",
             "redoc": "/redoc",
             "network": "/api/network",
-            "scada": "/api/scada"
+            "scada": "/api/scada",
+            "monitoring": "/api/monitoring"
         },
         "timestamp": datetime.now().isoformat()
     }
@@ -67,6 +69,7 @@ async def api_status():
 # Include API routers
 app.include_router(network_router, prefix="/api/network", tags=["Network"])
 app.include_router(scada_router, prefix="/api/scada", tags=["SCADA"])
+app.include_router(monitoring_router, prefix="/api/monitoring", tags=["Monitoring"])
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
