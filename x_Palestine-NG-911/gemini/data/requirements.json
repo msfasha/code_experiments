@@ -1,0 +1,1407 @@
+[
+  {
+    "requirement_number": "3.2.1.1",
+    "description": "The system must receive all emergency and non- emergency calls terminated by\n the providers on the NG-911 system SIP interfaces"
+  },
+  {
+    "requirement_number": "3.2.1.2",
+    "description": "All Calls must be processed by the NG-911 Communication System"
+  },
+  {
+    "requirement_number": "3.2.1.3",
+    "description": "All calls must be processed by the Interactive Voice Response System"
+  },
+  {
+    "requirement_number": "3.2.1.4",
+    "description": "All calls must be processed by the Automatic Call distribution"
+  },
+  {
+    "requirement_number": "3.2.1.5",
+    "description": "All calls must be primary displayed within the individual Computer Telephony\n Integration (CTI) client of the individual call taker, and only secondary\n signalized on the associated desktop VoIP phone (as a fallback routing step)."
+  },
+  {
+    "requirement_number": "3.2.1.6",
+    "description": "The CTI must contain the calling queue of the individual client."
+  },
+  {
+    "requirement_number": "3.2.1.7",
+    "description": "The CTI must have direct interaction with the Incident Creation Application."
+  },
+  {
+    "requirement_number": "3.2.1.8",
+    "description": "The NG-911 Communication system must retrieve / collect / query\n all available call associated data at the individual databases or connected\n systems. The collection of this data shall be done in an asynchronous way so\n that the call can be processed by the corresponding client immediately, whereas\n additional data can be added to the call as it becomes available (in case the\n query of an external system lasts longer)."
+  },
+  {
+    "requirement_number": "3.2.1.9",
+    "description": "The NG-911 Communication System must forward / display all call\n associated data at the individual sections of the incident creation\n application"
+  },
+  {
+    "requirement_number": "3.2.1.10",
+    "description": "The NG-911 Communication System respective the Incident Creation\n Application has to ensure that geographical data in connection with the call is\n being displayed by the Geographical Information system (GIS)."
+  },
+  {
+    "requirement_number": "3.2.1.11",
+    "description": "All calls of the NG-911 Communication System must be recorded (voice as\n well as related meta- data)."
+  },
+  {
+    "requirement_number": "3.2.1.12",
+    "description": "All calls must be processed in the incident creation system by the call\n takers."
+  },
+  {
+    "requirement_number": "3.2.1.13",
+    "description": "The incident creation application must provide support functionality to the\n Call-taker. This shall include at least a support in the verification of the\n location, the type of incident and the responsible PSO for that incident."
+  },
+  {
+    "requirement_number": "3.2.1.14",
+    "description": "The incident creation application must provide together with the NG-\n911 Communication system the function of engaging a second person\n (specialist) in the ongoing call. (supervisor-assist)"
+  },
+  {
+    "requirement_number": "3.2.1.15",
+    "description": "A second person (specialist) must be able to intervene in an NG-911 Call\n actively (barge-in). For this, the incident creation system must ensure all\n collected data is available at all clients filtered by location, type of call\n /incident and user rights."
+  },
+  {
+    "requirement_number": "3.2.1.16",
+    "description": "When the incident creation is concluded or the collected data is sufficient for\n the definition of the responsible PSO the incident must be ready for\n coordination displayed at the respective incident management clients."
+  },
+  {
+    "requirement_number": "3.2.1.17",
+    "description": "The incident management application has to support the coordinator in\n the selection of the correct PSO respective resource."
+  },
+  {
+    "requirement_number": "3.2.1.18",
+    "description": "The incident management application has to provide the display of all\n relevant geographical assigned data of the incident but also of\n selectable PSO or resources on the GIS."
+  },
+  {
+    "requirement_number": "3.2.1.19",
+    "description": "Other supplementary objects in relation to the individual incident (based\n on type) shall be displayed on the GIS (e.g. CCTV, AED, First Aid posts,\n equipment deposits, first responders, etc.). These elements as well as the\n different types shall be configurable by an administrator of the system in order\n to optimize/enhance the system by his own during live operations."
+  },
+  {
+    "requirement_number": "3.2.1.20",
+    "description": "The coordinator must be able to assign the needed PSO respective resources to\n the incident."
+  },
+  {
+    "requirement_number": "3.2.1.21",
+    "description": "The incident management system must initialize the defined communication\n channels (e.g. email, SMS, SDS, voice via PEI, voice via outbound call,) to ensure\n the assigned PSO, respective resource is being informed on the new assigned\n incident."
+  },
+  {
+    "requirement_number": "3.2.1.22",
+    "description": "The incident management system must manage the individual status of the\n incident. This status must also be able to be changed by 3rd party systems\n (e.g. Field Record Management applications, Radio Status, GIS settings)"
+  },
+  {
+    "requirement_number": "3.2.1.23",
+    "description": "For all calls a detailed Statistic function must be available (Call Detail Records).\n This shall include at a minimum (but not be limited to) statistics by\n o Called number\n o Date/Time\n o Combination of those two criteria\n The Statistics function shall include an open and documented interface + data\n Modell in order to setup individual reports based on the collected\n data."
+  },
+  {
+    "requirement_number": "3.2.1.24",
+    "description": "The individual system status (e.g. load, waiting time, logged in Agents\n (free/busy/pause) of the NG-911 Communication system has to be\n displayed in a simple graphical web form, filtered by attribute (e.g. Location,\n called number, timeframe,) to inform the personnel and supervisors."
+  },
+  {
+    "requirement_number": "3.2.2.1",
+    "description": "The system shall support basic VoIP PBX functions, minimum (but not\n limited to) to the following functions:"
+  },
+  {
+    "requirement_number": "3.2.2.1.1",
+    "description": "Termination of SIP Trunks, provided by the fixed and mobile telco\n providers"
+  },
+  {
+    "requirement_number": "3.2.2.1.2",
+    "description": "Support of incoming as well as outgoing calls via the provided SIP-trunks"
+  },
+  {
+    "requirement_number": "3.2.2.1.3",
+    "description": "Internal trunking capabilities in order to allow automatic switching\n to another telco- SIP-trunk if not available of capacity reached without any\n user/administrator interaction"
+  },
+  {
+    "requirement_number": "3.2.2.1.4",
+    "description": "Classification of calls, according to the following criteria:\n -\n  Called number\n -\n  Calling number (like prefix, user part, etc.)"
+  },
+  {
+    "requirement_number": "3.2.2.1.5",
+    "description": "Configuration and definition of routing targets according to\n the dialed number. These targets shall be:\n -\n  Users\n -\n  Roles or skills\n -\n  Working Positions\n -\n  IVR-Targets / ACD  Targets (in order to start an emergency\n procedure like announcements, etc.)"
+  },
+  {
+    "requirement_number": "3.2.2.1.6",
+    "description": "The assignment of number plans to above described targets shall be\n configurable by a system administrator and applied as the configuration is\n set active for the next new call (started routing process)."
+  },
+  {
+    "requirement_number": "3.2.2.1.7",
+    "description": "The IP PABX system shall at least (but not limited to) support\n the following agent functions (also used for CTI-clients)\n -\n  Call queues (display all routed / pending calls to the assigned client)\n -\n  Accept calls\n -\n  Terminate calls (also if the external party ends the call)\n -\n  Transfer calls\n o Supervised transfers (talk to the transfer target upfront without\n being heard by the caller prior call transfer)\n o Unsupervised transfer (directly transferring the call without\n any further interaction with the transfer target)\n -\n  Hold Calls\n -\n  Conferences (see further down)\n -\n  Toggle calls (switch from one call to another one, by\n automatically putting the currently active call on hold)"
+  },
+  {
+    "requirement_number": "3.2.2.2",
+    "description": "The necessary amount of internal or external extensions for dial in or routing\n targets shall not be limited by any number and included within the offered\n licenses."
+  },
+  {
+    "requirement_number": "3.2.2.3",
+    "description": "The IP PBX system shall support the use of an CTI application and log into the\n PBX core to control the different actions of the core."
+  },
+  {
+    "requirement_number": "3.2.2.4",
+    "description": "The IP PBX shall support standard VoIP Phones as secondary routing targets\n for failover mechanisms if the CTI application is not available\n anymore."
+  },
+  {
+    "requirement_number": "3.2.2.5",
+    "description": "If the CTI or ACD Function is not available / reachable the IP PBX shall\n route the calls according to configurable routing roles, so that calls can still\n be processed and handled by the same staff (but potentially without\n sophisticated voice announcement or routing capabilities like\n time/skill-based routing)."
+  },
+  {
+    "requirement_number": "3.2.2.6",
+    "description": "A “text before answer” functionality enables the playback of text messages\n for waiting calls. Principally, all callers receive an announcement, so that they\n know that they have dialed correctly and are taken care of. It shall be\n configurable if the call shall be routed after the text was played (“intro\n announcement”) or if routing shall be already starting during the text\n announcement is played to the caller (“ringing announcement”)"
+  },
+  {
+    "requirement_number": "3.2.2.7",
+    "description": "The announcement shall be able to be changed with immediate effect. The\n predefined standard announcement texts that can only be changed by the\n administrator must be provided. In addition, at least five freely recordable\n announcement texts shall be able to be recorded and activated\n by users."
+  },
+  {
+    "requirement_number": "3.2.2.8",
+    "description": "The text-before-answer functionality shall be able to be switched on and\n off, line-specifically (e.g. Number or for SIP)."
+  },
+  {
+    "requirement_number": "3.2.2.9",
+    "description": "The Communication System must be provided with an own system\n telephone directory controlled through Role Based Access Control (RBAC)\n mechanisms. Names stored in the telephony directory must be shown\n as text on incoming calls (resolution via CLI)"
+  },
+  {
+    "requirement_number": "3.2.2.10",
+    "description": "The system telephone directory is fed through the data provisioning from\n different data sources (NG-911 call-taking, personal database, public\n telephone directories, telephone directories of the connected telephone\n systems, etc.) and serves above all for the purpose of being able to provide\n the telephone directory functionality also in the isolated operation of the\n NG-911 Communication System."
+  },
+  {
+    "requirement_number": "3.2.2.11",
+    "description": "There must be the function of a “blind” telephone directory, which is\n not visible or searchable for call-taker or operators but stored data shall be\n still displayed if the CLI is recognized. (Government Functions, VIPs,)"
+  },
+  {
+    "requirement_number": "3.2.2.12",
+    "description": "The software must have a “blacklist” of phone numbers and manage the\n function to refer calls to the answering machine or choose a different time\n interval till processing (playing a pre- recorded announcement for a\n given time towards the call). An administrator shall be allowed without\n any additional programming\n edit and create different time intervals."
+  },
+  {
+    "requirement_number": "3.2.2.13",
+    "description": "The NG-911 Communication System must be provided with a\n conference function. Conferences with up to ten parties each must be possible.\n Random NG-911 Communication System parties (internal, emergency\n operations center, connected telephone systems, mobile network, landline\n network, etc.) shall be able to take part in conferences."
+  },
+  {
+    "requirement_number": "3.2.2.14",
+    "description": "The conference module of the NG-911 Communication System must\n function modelled as virtual conference rooms. The virtual conference\n rooms must be accessible by means of dialing an extension number and secured\n by access codes. They must be able to be set up and configured from the\n supervisor or administrator\n workplaces."
+  },
+  {
+    "requirement_number": "3.2.2.15",
+    "description": "The following functions must be offered by the conference module:\n -\n  The query of number of parties dialled in with DTMF tone (one keystroke),\n output as voice announcement,\n -\n  blocking of conference room by means of DTMF tone (one keystroke),\n -\n  announcement of a dial-in attempt in the case of a blocked conference room,\n -\n  attention tone to the conference when a party joins or leaves the\n conference,\n -\n  mute switch of individual parties by the party itself by means of a DTMF\n tone (one keystroke) with robust DTMF recognition,\n o robust echo compensation also in the case of background noises."
+  },
+  {
+    "requirement_number": "3.2.2.16",
+    "description": "An answering machine functionality must be provided for freely configurable\n extension numbers."
+  },
+  {
+    "requirement_number": "3.2.2.17",
+    "description": "The answering machines must be able to be operated via telephone and\n through a Web client. Authorizations must be able to be provided\n for access. The Web client must offer the full functions, the telephone\n operation only as far as this can be mapped reasonable through DTMF.\n The operator guidance must be coordinated in  the detailed\n specification / final design."
+  },
+  {
+    "requirement_number": "3.2.2.18",
+    "description": "The announcement texts must both be able to be recorded via the relevant\n allocated telephones as well as imported in the form of .WAV or MP3 files,\n whereby access must be protected by passwords."
+  },
+  {
+    "requirement_number": "3.2.2.19",
+    "description": "Received messages shall be able to be delivered to an e-mail address as .WAV\n files or as MP3 files."
+  },
+  {
+    "requirement_number": "3.2.2.20",
+    "description": "A remote inquiry functionality shall be available. Access for recording\n must be protected  by passwords."
+  },
+  {
+    "requirement_number": "3.2.2.21",
+    "description": "At least the following functions shall be available for the users:\n -\n  \n recording of announcements,\n -\n  change of announcements,\n -\n  copying of .MP3 files with the text announcements,\n -\n  deletion of announcements."
+  },
+  {
+    "requirement_number": "3.2.2.22",
+    "description": "The administrator of the client shall be able to configure the general and\n individual limitation of the recording time of the answering machine for the\n purpose of limiting the necessary memory."
+  },
+  {
+    "requirement_number": "3.2.3.1",
+    "description": "A clear call ID must be allocated to every call by the NG-911 Communication\n System. The call ID must serve for clear identification of the call, so that it can be\n referenced to and so that the call can be associated with a case/action number of\n the 9-1-1 Data Collection or an NG-911 Communication System file,\n among other things. Calls that were merely signalized but not\n attended to must also receive a call ID."
+  },
+  {
+    "requirement_number": "3.2.3.2",
+    "description": "The NG-911 Communication System must monitor independently that\n every region is allocated to at  least one active workplace, i.e. one at which\n an agent is logged on, at all times. If an agent wishes to deselect a region that\n would no longer be  allocated to an active workplace afterwards, this\n circumstance must be pointed out to the user by a warning message to be\n confirmed manually."
+  },
+  {
+    "requirement_number": "3.2.3.3",
+    "description": "By means of call associated data in relation to a call -beyond the Call ID- shall be\n determined and provided for display for external applications (e.g. the\n incident creation application). This data shall be able to be queried from\n applications or databases (if not provided via push) by the\n Communication System through the Communication System interface\n and displayed in the user software and/or in waiting lists."
+  },
+  {
+    "requirement_number": "3.2.3.4",
+    "description": "Metadata associated to voice calls shall be retrieved through queries to\n the appropriate platform (e.g. AML, telco operator provided location, ,\n etc.) and processed accordingly. The data shall be transferred to the\n incident application at request and displayed."
+  },
+  {
+    "requirement_number": "3.2.3.5",
+    "description": "The interface shall be able to process further call associated information to\n be defined in the detailed specification phase / final design phase. As data\n structure, for example, a container may be realized in a defined, human as\n well as machine readable format, which contains the following elements:\n • call ID\n • general information:\n -\n  time, date of the beginning of the call,\n -\n  workplace at which it was answered,\n -\n  ID related to voice documentation file\n -\n  optionally link to voice documentation file,\n -\n  list of other optional data elements,\n • CLI:\n -\n  CLI E164 - 'calling line information',\n -\n  IMEI if delivered (SIM-less calls)\n -\n  SIP address,\n -\n  extension,\n -\n  caller name resolution (if known)\n • e-call:\n -\n  as defined in the standards,"
+  },
+  {
+    "requirement_number": "3.2.3.6",
+    "description": "The interface shall be able to process further call associated information to be\n defined in the detailed specification phase / final design phase. As data\n structure, for example, a container may be realized in XML format or similar,\n which contains the following elements:\n • Information on location (if delivered):\n -\n  address of the subscriber,\n -\n  coordinates (e.g. geo-referenced cellular information of GSM networks for\n caller localization or GPS coordinates of appropriately equipped\n mobile telephones, etc.),\n -\n  specification of accuracy,\n -\n  source of the coordinates (landline, mobile network, etc.),\n • Reverse look-up in the public telephone directory (if available):\n -\n  name,\n -\n  address,\n -\n  \n -\n other data related to the entry in the telephone directory,\n • Reverse look-up in the telephone directory of the telephone systems\n -\n  name,\n -\n  other data related to the entry in the telephone directory"
+  },
+  {
+    "requirement_number": "3.2.3.7",
+    "description": "There shall be no difference distinguished between the signalization on the\n client of voice call, data events triggering a communication\n (SMS, SDS, ..) or multimedia calls"
+  },
+  {
+    "requirement_number": "3.2.3.8",
+    "description": "The communication operator client shall also be designed so that it can\n optionally also be installed on a touch screen in addition or alternatively\n to the emergency operations control computer."
+  },
+  {
+    "requirement_number": "3.2.3.9",
+    "description": "The user interface of the Communication operator client shall be\n structured clearly and easy to operate."
+  },
+  {
+    "requirement_number": "3.2.3.10",
+    "description": "The configuration of the user interface as well as various types of\n signalizations to the user (flashing keys, color change of operating\n elements in the case of status changes, etc.) shall be defined by the Supplier\n jointly with the user organizations within the course of the detailed design\n phase."
+  },
+  {
+    "requirement_number": "3.2.3.11",
+    "description": "The elements of the user interface and their display shall be configurable.\n Changes and adaptations shall be able to be performed by the administrator of\n the client without laborious programming."
+  },
+  {
+    "requirement_number": "3.2.3.12",
+    "description": "The following areas shall be available:\n • main operating field for telephony incl. numeric dialing pad and the\n most important controls,\n • conference facility,\n • operation of the short-term voice documentation: selection of a\n call (file), start, stop, 'fast forward', 'fast backward', pause, export as .WAV file,\n etc.,\n • log data of the workplace in relation to incoming, accepted, and outgoing\n calls\n • functional status of the NG-911 communication system (faults)\n as well as key figures of the NG-911 communication system, such as e.g. call\n times and waiting times primarily as numerical values, but possibly in the form\n of bars or graphs for the purpose of faster identification of the displayed\n information (equivalent to green,\n orange, red area)."
+  },
+  {
+    "requirement_number": "3.2.3.13",
+    "description": "The keypad must be designed like the standard telephone keypad and\n serve for the entry of call numbers."
+  },
+  {
+    "requirement_number": "3.2.3.14",
+    "description": "The following visual displays must be available:\n • status of own telephone,\n • active call data incl. duration of call as well as telephone number  of the\n caller and queried call associated data in relation to the caller,\n • ringing."
+  },
+  {
+    "requirement_number": "3.2.3.15",
+    "description": "A display field must be available to control numerical entries. The display\n must show the call numbers and, if known, the names of callers for incoming\n calls starting with the call signalization (ringing) up to the end of the call."
+  },
+  {
+    "requirement_number": "3.2.3.16",
+    "description": "Furthermore, display fields must be provided for the last calls\n made (incoming and outgoing). In addition, the queried data must\n be displayed for these calls and it must be possible to set up the\n displayed calls again from the list."
+  },
+  {
+    "requirement_number": "3.2.3.17",
+    "description": "An agent shall be able to accept any call from his waiting list, even if the\n call is signalized at another workplace or is not ordered next in the waiting\n list."
+  },
+  {
+    "requirement_number": "3.2.3.18",
+    "description": "The waiting list shall always be fully visible and operable, irrespective of\n other windows opened or the selected tabulator fields."
+  },
+  {
+    "requirement_number": "3.2.3.19",
+    "description": "This operating window/section shall make all telephony functions\n accessible. The following keys must be provided:\n o call accept\n o call terminate ,\n o forwarding, call transfer (internal and external using the same\n key)\n o listening in (supervisor assist / barge in)\n o alphanumerical telephone directory,\n o multiple destination ringing keys that can be arranged in a\n structured way\n o microphone mute, whereby the status of the microphone\n (switched to mute/on) must be displayed very clearly\n o activate/deactivate external loudspeaker, whereby\n the status of the external loudspeaker (switched to mute/on)\n must be displayed very clearly,\n o volume control for acoustic call signalization (ringing),\n o pause function."
+  },
+  {
+    "requirement_number": "3.2.3.20",
+    "description": "Calls in the waiting list shall be marked in different colors by\n category, whereby the following categories must be differentiated:\n o emergency calls (e.g. red),\n o non-emergency calls (e.g. black),\n o calls for other workplaces (e.g. grey)."
+  },
+  {
+    "requirement_number": "3.2.3.21",
+    "description": "All calls waiting for the emergency operations center shall be marked in\n color, together with the information at which workplaces they are\n signalized."
+  },
+  {
+    "requirement_number": "3.2.3.22",
+    "description": "The NG-911 Communication System operator client shall offer a\n window or an interface in which the audio signals from varying sources\n can be switched to the varying output devices."
+  },
+  {
+    "requirement_number": "3.2.3.23",
+    "description": "The relevant active loudspeaker(s) shall be able to be switched to mute easily."
+  },
+  {
+    "requirement_number": "3.2.3.24",
+    "description": "The short-term voice documentation system is operated in this tab."
+  },
+  {
+    "requirement_number": "3.2.3.25",
+    "description": "A separate area must be provided for conference management for the\n setup and management of telephone conferences"
+  },
+  {
+    "requirement_number": "3.2.3.26",
+    "description": "The audio switching matrix must be controlled by the software client of\n the NG-911 Communication System."
+  },
+  {
+    "requirement_number": "3.2.3.27",
+    "description": "The following audio services are connected to the audio switching matrix:\n .1 VoIP Telephone / Handset\n .2 workplace computer (computer tones),\n .3 headset Quick Disconnect (QD),\n .4 external loudspeaker of the workplace,\n .5 jack for monitoring loudspeaker\n .6 voice documentation system."
+  },
+  {
+    "requirement_number": "3.2.4.1",
+    "description": "The NG-911 Communication System must support call profiles. The\n option must be provided at the workplaces to select or deselect\n individual emergency calls from single regions."
+  },
+  {
+    "requirement_number": "3.2.4.2",
+    "description": "The ACD core function shall signalize incoming calls or display them in\n waiting lists exactly at those main workplaces at which they shall be\n handled."
+  },
+  {
+    "requirement_number": "3.2.4.3",
+    "description": "Emergency calls and other calls must be allocated according to\n operator profiles. Each operator has a standard profile selected when the\n relevant agent logs on to a workplace. In addition, it must be definable in\n the operator profiles (applied for the workplace for the time the agent is logged\n in) from which regions calls are allocated and from which regions calls can be\n picked up."
+  },
+  {
+    "requirement_number": "3.2.4.4",
+    "description": "A sorted waiting list shall be generated for every workplace based on the\n operator profile. Principally, all calls can be seen by all workplaces, whereby a\n filter can be activated for the individual workplaces that orders the calls\n of selected regions first. Emergency forces\n returning calls must be identified."
+  },
+  {
+    "requirement_number": "3.2.4.5",
+    "description": "The ACD shall provide generation and management of agent-specific\n / role-specific waiting lists."
+  },
+  {
+    "requirement_number": "3.2.4.6",
+    "description": "The ACD shall provide intelligent waiting list management by ordering waiting\n calls from all voice interfaces jointly, namely from\n o emergency call lines,\n o non-emergency calls,\n o extensions of the NG-911 Communication System,\n o other SIP calls"
+  },
+  {
+    "requirement_number": "3.2.4.7",
+    "description": "The system shall support sequencing of incoming calls by\n o priority,\n o caller (if he can be identified by means of the caller associated data), e.g.\n to order calls from own emergency forces first,\n o for emergency calls: region from which the call was made (if identifiable from\n the CLI), and\n o arrival of the call request (waiting time)."
+  },
+  {
+    "requirement_number": "3.2.4.8",
+    "description": "Incoming calls shall be managed and ordered through waiting lists (calling\n queue) at the workplaces."
+  },
+  {
+    "requirement_number": "3.2.4.9",
+    "description": "The allocation and ordering of calls to the workplace(s) shall be\n performed according to an allocating algorithm – defined in detail with the\n customer- which takes the priorities of the calls as well as the allocation method\n desired by the users into account. Waiting calls shall be shown in the waiting list\n at every workplace from which calls can also be picked-up actively."
+  },
+  {
+    "requirement_number": "3.2.4.10",
+    "description": "Calls shall be allocated to the workplaces switched active and agent\n logged in. For this purpose, allocating algorithms must be\n implemented, which can be predefined and activated by the\n administrator of the client in any free configuration. The change of the\n allocating algorithm shall become effective immediately (for the next call\n entering the system)."
+  },
+  {
+    "requirement_number": "3.2.4.11",
+    "description": "At least two allocating algorithms shall be pre- configured, namely\n o allocation of the call waiting longest with highest priority to the main\n workplace that is free longest, and\n o allocation of the call waiting longest with highest priority to the first free\n main workplace along a sequence of workplaces."
+  },
+  {
+    "requirement_number": "3.2.4.12",
+    "description": "After a lapse of time (approx. 10 sec), a waiting call shall be signalized at\n the next main workplace logged on in accordance with the\n active allocating algorithm."
+  },
+  {
+    "requirement_number": "3.2.4.13",
+    "description": "Workplaces shall be able to be switched to pause. No calls are allocated\n in this condition. When switched to pause, it must be checked in analogy to the\n logoff of a workplace whether the workplace is the last of his role/function and\n the pause switch must be rejected with a qualified warning information,\n where applicable."
+  },
+  {
+    "requirement_number": "3.2.4.14",
+    "description": "After every emergency call, no new calls shall be allocated to a main\n workplace during a configurable follow-up/wrap-up time. If all\n operator’s consoles in question are engaged, the call shall be allocated to the\n operator’s console that has been free longest. In the case that a longer\n follow-up time or pause etc. is required, operator’s consoles shall be able to be\n switched to “not available” manually."
+  },
+  {
+    "requirement_number": "3.2.4.15",
+    "description": "Re-callers, i.e. callers with the same CLI on the same call number within a\n configurable time (e.g. last 120 minutes) shall be identified by the\n Communication system, e.g. by means of the own log data, and\n allocated to  the main workplace from which the call was attended to the\n last time, insofar as this workplace is still switched active with the same\n agent. (last agent routing)"
+  },
+  {
+    "requirement_number": "3.2.4.16",
+    "description": "Callers of emergency calls that were ended by the caller before they were\n accepted in the emergency operations center must also be added to the\n waiting list (incl. the allocation of a call ID) and marked as such. When the call is\n processed by the agent, it shall be set up outgoing to the telephone\n network, irrespective of the fact that the call was ended by the caller himself, as\n an emergency case may be on hand\n In addition, the option shall be provided to delete the unattended call\n without a call setup (rejected)."
+  },
+  {
+    "requirement_number": "3.2.4.17",
+    "description": "An incoming call shall be given priority based on the call number dialed or the\n recall identified by the Voice Communication. At least ten priorities must be\n provided. The allocation of priorities shall be able to be configured without\n limitation and easily by the administrator of the client. Calls must be ordered\n by priority and within the priority as they come in."
+  },
+  {
+    "requirement_number": "3.2.4.18",
+    "description": "For every waiting list, a configurable time criterion shall be definable,\n after the expiry of which an unattended call is rowed one step higher\n in the priority. This way, it shall be ensured that calls with a low\n priority do not keep rowed to the back permanently."
+  },
+  {
+    "requirement_number": "3.2.4.19",
+    "description": "After a priority-specific configurable emergency case timeout (e.g. 30 s for\n emergency calls, three minutes for calls, five minutes for internal calls, etc.), call\n shall be escalated and signalized at all workplaces where an agent is\n logged in, irrespective of the busy/ pause status. In addition, the\n incident shall be reported to the network management system as fault."
+  },
+  {
+    "requirement_number": "3.2.4.20",
+    "description": "The parameters of the NG-911 communication system in relation to\n processed as well as waiting calls shall be assessed continuously and\n monitored for configurable threshold values."
+  },
+  {
+    "requirement_number": "3.2.5.1",
+    "description": "A short-term voice documentation system shall be accessible centrally and\n offer playback of conversations that happened minimum 12 hours before."
+  },
+  {
+    "requirement_number": "3.2.5.2",
+    "description": "At every workplace, the most recent conversations held there, e.g. within a\n period of 12 hours, must be able to be played back at any time. This way, the\n emergency operations center staff have the option to research information\n that was not or badly understood by them during\n the acceptance of emergency calls."
+  },
+  {
+    "requirement_number": "3.2.5.3",
+    "description": "For confidentiality reasons, the playback of voice recordings shall be secured by\n an authority-controlled access."
+  },
+  {
+    "requirement_number": "3.2.5.4",
+    "description": "A short-time voice documentation system shall record and play back all\n conversations of a workplace since the logon at the workplace."
+  },
+  {
+    "requirement_number": "3.2.5.5",
+    "description": "The playback of a short-time voice documentation system must\n be able to be performed directly at the main workplaces (headsets,\n loudspeakers etc.)."
+  },
+  {
+    "requirement_number": "3.2.5.6",
+    "description": "The short-term voice documentation must be operated through a tab area\n of the Voice Communication operator client."
+  },
+  {
+    "requirement_number": "3.2.5.7",
+    "description": "Direct search in the short-time voice documentation system, of a\n conversation based on the call number, the time, etc. shall be\n possible."
+  },
+  {
+    "requirement_number": "3.2.5.8",
+    "description": "Simple skipping forward and backward between the recorded conversations\n shall be possible in the short-time voice documentation system."
+  },
+  {
+    "requirement_number": "3.2.5.9",
+    "description": "The option to move 'forward' and 'fast forward' as well as 'backward' and 'fast\n backward' shall exist in the short-time voice documentation\n system."
+  },
+  {
+    "requirement_number": "3.2.5.10",
+    "description": "Targeted skipping to a specific time in the conversation just heard\n must be possible (e.g. “2.15 after the beginning of the conversation”),\n whereby the time position shall be controllable\n by the operator."
+  },
+  {
+    "requirement_number": "3.2.5.11",
+    "description": "The individual voice recordings must be able to be exported in the form\n of .MP3 or .WAV files so that the recordings are managed in the\n archiving system."
+  },
+  {
+    "requirement_number": "3.2.5.12",
+    "description": "All exports and access to individual voice recordings must be logged."
+  },
+  {
+    "requirement_number": "3.2.5.13",
+    "description": "The long-term voice documentation shall be supported in order to offer\n a complete court- utilizable operational documentation of all\n conversations held via the NG-911 communication system within\n the scope of inquiry and reasoning"
+  },
+  {
+    "requirement_number": "3.2.5.14",
+    "description": "All recordings incl. provided meta-data shall be stored for at minimum 5\n years. Within this timeframe, the record itself shall be shown for any\n matching query within the long-term voice documentation application. As the\n threshold of 5 years is reached, all records older than that shall be deleted\n automatically (incl. provided meta-data)."
+  },
+  {
+    "requirement_number": "3.2.5.15",
+    "description": "The voice documentation system must support different search functions,\n e.g. by record ID, date, time, call ID, operation number of the NG-911\n Personnel, attributes of the call, etc.."
+  },
+  {
+    "requirement_number": "3.2.6.1",
+    "description": "The incident creation application is the central software platform for processing\n incidents. It must support the call center agent in all aspects of processing\n incidents, starting with the acceptance of an incidents over alarming up to\n documentation. A geographic information system (GIS) that supports the call\n center agent visually in their activities must be integrated in the NG-911.\n Functionalities in the incident creation application and GIS must be integrated\n functionally and contextually."
+  },
+  {
+    "requirement_number": "3.2.6.2",
+    "description": "The incident creation application shall be operated through the\n workplaces in the emergency operations center and the remote\n workplaces at the PSO."
+  },
+  {
+    "requirement_number": "3.2.6.3",
+    "description": "The incident creation application shall include the usual basic functionalities\n for the operation of an emergency operations center in the area of police, fire\n brigade, ambulance services and civil protection."
+  },
+  {
+    "requirement_number": "3.2.6.4",
+    "description": "A new incident with an associated entry mask must be opened automatically\n upon\n -\n  acceptance of a verbal emergency call (e.g. telephone, mobile network),\n -\n  receipt of a message from alarm indication facilities (e.g. fire alarm analysis\n center) or a danger indication system,\n -\n  Emergency call SMS."
+  },
+  {
+    "requirement_number": "3.2.6.5",
+    "description": "The mask for opening an incident must also be able to be opened manually\n and start the creation of an incident as well."
+  },
+  {
+    "requirement_number": "3.2.6.6",
+    "description": "The primary information required for response to the incident in\n accordance with stored alarming plans (mandatory fields) must be able to be\n entered or amended quickly in a simple way."
+  },
+  {
+    "requirement_number": "3.2.6.7",
+    "description": "All available caller information must be taken up in the mask for acceptance of\n incidents during the acceptance of emergency calls. All databases available\n connected to the system (address database in the incident creation\n application, address directories, etc.) must be used for the caller\n identification."
+  },
+  {
+    "requirement_number": "3.2.6.8",
+    "description": "The proposed incident creation application must be able to retrieve caller\n location data from the location servers if available on the ESInet."
+  },
+  {
+    "requirement_number": "3.2.6.9",
+    "description": "The proposed incident creation application must be able to import multiple\n location data (i.e. data originated from multiple sources) from the location\n servers"
+  },
+  {
+    "requirement_number": "3.2.6.10",
+    "description": "The proposed incident creation application must be able to rebid location\n information to the location servers"
+  },
+  {
+    "requirement_number": "3.2.6.11",
+    "description": "The caller location must be displayed on maps (GIS) as soon as it is received.\n It must be possible to choose which data to display on maps if data are from\n multiple sources"
+  },
+  {
+    "requirement_number": "3.2.6.12",
+    "description": "Should the location servers provide no localization, the operator\n must be put in the conditions of being supported by multi-layered maps in\n figuring it out basing on caller's provided information"
+  },
+  {
+    "requirement_number": "3.2.6.13",
+    "description": "Once a localization has been defined on maps, it must be possible to import\n coordinates and reverse geo-code them into the incident record"
+  },
+  {
+    "requirement_number": "3.2.6.14",
+    "description": "If the caller location corresponds to the incident location, the incident creation\n application must allow the automatic import of relevant data from\n the former to the latter"
+  },
+  {
+    "requirement_number": "3.2.6.15",
+    "description": "The incident management must allow the possibility to attach relevant\n documents to an incident location (* .pdf, * .xlsx, * .docx, * .odf,\n * .odt, * .ods, * .html files, images, internal and/or external URLs)"
+  },
+  {
+    "requirement_number": "3.2.6.16",
+    "description": "All available information must be taken up in the mask for acceptance of an\n incidents during the signalization by an alarm indication facility or danger\n indication system (fire, burglar, sensor, CCTV)."
+  },
+  {
+    "requirement_number": "3.2.6.17",
+    "description": "The incident creation application must be provided with an address\n verification. If operations are accepted, the address allocated to the\n operation must be verified through an address database. During entry of\n the address, proposals must be made by the incident creation application for\n the correct address, which can be accepted by pressing a key (e.g. tabulator) or\n by a mouse click."
+  },
+  {
+    "requirement_number": "3.2.6.18",
+    "description": "A phonetic check of the entry with the stored address data shall be possible\n during the address verification."
+  },
+  {
+    "requirement_number": "3.2.6.19",
+    "description": "The address section of the incident record must include the following\n information:\n o county\n o municipality;\n o postal-code (ZIP code)\n o district\n o street 1;\n o street 2 (for intersections);\n o civic number;\n o free text data (e.g. buzzer number, apartment number, floor, ...)\n o Latitude (decimal or sexagesimal coordinates must be supported)\n o Longitude (decimal or sexagesimal\n coordinates must be supported)"
+  },
+  {
+    "requirement_number": "3.2.6.20",
+    "description": "If an address cannot be verified correctly because this address does not\n exist in the stored address data, the next higher or next lower house\n number available in the system (respectively for even or odd house\n numbers) shall be proposed with a relevant remark."
+  },
+  {
+    "requirement_number": "3.2.6.21",
+    "description": "The proposed solution must integrate the what3words service\n (please refer to www.what3words.com for details) for\n geolocating calls. The software must be able to use the combinations of\n words from the what3words service in the same input line where the caller\n address is inserted, without the necessity for the call taker to require a\n switch of input line or without invoking another service. The input from\n manual address typing to\n what3words typing must be seamless"
+  },
+  {
+    "requirement_number": "3.2.6.22",
+    "description": "All caller information taken up or amended in the course of acceptance of\n the incident (that is at least the first name, surname, complete address,\n telephone number(s)) must be saved in the database and must be\n available for a renewed address verification."
+  },
+  {
+    "requirement_number": "3.2.6.23",
+    "description": "A defined incident code (respond code) must be able to be allocated to the\n incident. An unlimited number of incident codes must be definable. A later\n amendment and change of the incident codes by the users must be possible."
+  },
+  {
+    "requirement_number": "3.2.6.24",
+    "description": "The proposed incident applications must provide operators with the list of\n measures that have to be undertaken to meet ERC / PSO standard operating\n procedures. Measures are the \"To Do List\" which must be composed by at\n least the following actions: \"send mail to\", \"make a call to\", \"read\n instructions\", \"send a SMS to\". Measures must be configurable and the list\n must be dynamically composed basing on the incident type, location and time\n of creation. For a single measure it must be possible to configure\n whether it is mandatory and the operator must be put in the position to\n append narratives for each of them"
+  },
+  {
+    "requirement_number": "3.2.6.25",
+    "description": "The proposed incident applications must provide incident classification as a tree\n shaped structure where a main classification can be associated to up to five\n sub-classifications. Incident priority must be automatically assigned once\n the classification has been entered"
+  },
+  {
+    "requirement_number": "3.2.6.26",
+    "description": "It must be possible to nominate (configure) a role for a particular\n geographic area; e.g. a coordinator with competence on region \"A\"\n must access different data than a coordinator with competence on region\n \"B\""
+  },
+  {
+    "requirement_number": "3.2.6.27",
+    "description": "It must be possible to specialize a role for a particular PSO; e.g. a Fire\n personnel must access different data from medical personnel"
+  },
+  {
+    "requirement_number": "3.2.6.28",
+    "description": "Incident data access must be made possible to supervisors and to call\n takers/specialists or coordinators that have been actually involved in the\n incident. The incident management application must make it possible to\n create multi- agency incidents, e.g. incident for which Fire and Medical PSO’s are\n simultaneously involved"
+  },
+  {
+    "requirement_number": "3.2.6.29",
+    "description": "The input mask of the incident creation system must be configurable per PSO or\n type of incident"
+  },
+  {
+    "requirement_number": "3.2.6.30",
+    "description": "All data used for the incident handling have to be freely manageable by the\n administrator of the system"
+  },
+  {
+    "requirement_number": "3.2.6.31",
+    "description": "It must be possible to allocate an alarm level (at least 1 to 5 or a textual\n equivalent →  “alarm code”) to the incident in order to inform the\n coordinator on the urgency of the incident."
+  },
+  {
+    "requirement_number": "3.2.6.32",
+    "description": "An automatic link between the incident code and an allocated alarm level shall\n be possible."
+  },
+  {
+    "requirement_number": "3.2.6.33",
+    "description": "It must be possible to add notes to an incident in a free text field."
+  },
+  {
+    "requirement_number": "3.2.6.34",
+    "description": "An automatic identification and visualization of neighboring incident\n (within a certain radius around the new incident location) shall be given."
+  },
+  {
+    "requirement_number": "3.2.6.35",
+    "description": "An automatic verification for possible multiple alarming or simultaneous past\n incident with the same incident location, etc. shall be performed for a\n configurable radius of location of the currently created incident."
+  },
+  {
+    "requirement_number": "3.2.6.36",
+    "description": "Data entered must be visible for other clients instantly, based on user\n rights and filter (location, incident type, caller ID.)."
+  },
+  {
+    "requirement_number": "3.2.6.37",
+    "description": "An interaction as assist/specialist request (CTI Function barge-in, supervisor\n assistance) on that incident must be possible from other clients."
+  },
+  {
+    "requirement_number": "3.2.6.38",
+    "description": "The incident application must provide the possibility for multiple call takers to\n work on the same incident, in particular it must be possible for more than one\n call taker to work on incident measures"
+  },
+  {
+    "requirement_number": "3.2.6.39",
+    "description": "There shall be a possibility to copy & duplicate incidents."
+  },
+  {
+    "requirement_number": "3.2.6.40",
+    "description": "A phonetic and logical check of the entries for consistency with the\n information of the databases and configuration files stored in the\n system shall be possible."
+  },
+  {
+    "requirement_number": "3.2.6.41",
+    "description": "The takeover of the incident into the system and the release for coordination\n must not be performed until all mandatory fields in the mask for acceptance\n of an incident are completed. This does not exclude the function of the pre-alert\n to the coordinator (pre-alert: info to coordinator about likely happening of a\n critical incident in his area, enabling him to trigger an alarm reducing the\n intervention time)"
+  },
+  {
+    "requirement_number": "3.2.6.42",
+    "description": "Any new incident must be identified using an identification number that is\n clear & unique within the entire system, as well as the date and the time."
+  },
+  {
+    "requirement_number": "3.2.6.43",
+    "description": "It must also be possible to determine the location/ workplace & user creating the\n incident from the identification."
+  },
+  {
+    "requirement_number": "3.2.6.44",
+    "description": "The incident waiting for coordination must be displayed in a separate\n window (operational overview). A differentiation of incident by color (e.g. by\n type of operation, alarm level) must be provided for easier orientation of the\n call center agent."
+  },
+  {
+    "requirement_number": "3.2.6.45",
+    "description": "The selected –  in incident creation fields displayed - incident must be\n identified (marked) in the waiting for coordination display in the\n separate window (operational overview)"
+  },
+  {
+    "requirement_number": "3.2.6.46",
+    "description": "The created incident must also be displayed in the GIS and identified by\n color or different symbols and with their incident number and code. The\n color display must be consistent with\n the color selection in the tabular display."
+  },
+  {
+    "requirement_number": "3.2.6.47",
+    "description": "The links with calls shall be able to be performed automatically by selection\n during the conversation or immediately afterwards."
+  },
+  {
+    "requirement_number": "3.2.6.48",
+    "description": "The links to the voice recording shall be taken over into the operational log\n automatically."
+  },
+  {
+    "requirement_number": "3.2.6.49",
+    "description": "It must be possible to allocate an incident journal to every incident, in which the\n inputs & changes taken by the agent during the relevant incident creation\n are recorded chronologically (operationally-related part of the\n logging). The incident journal must be able to be supplemented\n by manual entries and notes. A manual link with calls and related to\n this operation as well as a link to the voice recording\n must be possible."
+  },
+  {
+    "requirement_number": "3.2.7.1",
+    "description": "The geographical information system (GIS) must be able to display location\n related data clearly and thus to give the personnel a quick overview of the\n current situation."
+  },
+  {
+    "requirement_number": "3.2.7.2",
+    "description": "The GIS shall be closely linked with the other NG- 911 applications. The context\n menu of individual objects available in the incident management application\n must also be retrievable from the GIS. As a result, it must be possible e.g. to\n alarm a fire brigade through the context menu of a\n symbol in the GIS."
+  },
+  {
+    "requirement_number": "3.2.7.3",
+    "description": "The maps viewer module must provide the possibility for personnel to\n freely open and close all available geo-coded layers"
+  },
+  {
+    "requirement_number": "3.2.7.4",
+    "description": "The caller location must be displayed on maps (GIS) as soon as it is received.\n For AML as radius with the option to rebid from the AML server respective to\n switch the source of AML (GPS, WIFI, network)\n For Cell ID as sector where possible respective cone of main cell direction.\n For other apps delivering location information together with the call: radius\n respective pin- point.\n It must be possible to choose which data to display on maps if data are from\n multiple sources"
+  },
+  {
+    "requirement_number": "3.2.7.5",
+    "description": "It must be possible to zoom over various maps or scales continuously."
+  },
+  {
+    "requirement_number": "3.2.7.6",
+    "description": "Imprints and symbols must be adjusted automatically during zooming in\n accordance with the selected display."
+  },
+  {
+    "requirement_number": "3.2.7.7",
+    "description": "The application offered for the GIS shall support the following tools:\n -\n  drawing in of stretches and polygons,\n -\n  measurement of distances,\n -\n  measurement of surfaces,\n -\n  determination of the access route."
+  },
+  {
+    "requirement_number": "3.2.7.8",
+    "description": "A tight link must exist between the mask- oriented activities during\n coordination and incident processing and the graphical display of\n the situation."
+  },
+  {
+    "requirement_number": "3.2.7.9",
+    "description": "For this purpose, major aspects during incident management must also be\n displayed in the GIS (e.g. operational location, responsible organization,\n alarmed organization, etc.). Updates must also be carried out in near real\n time in the GIS area (without manual refresh of the application)."
+  },
+  {
+    "requirement_number": "3.2.7.10",
+    "description": "When objects or symbols are clicked in the GIS, the stored data information\n must be able to be retrieved and displayed from various databases."
+  },
+  {
+    "requirement_number": "3.2.7.11",
+    "description": "It must be possible from the GIS to create an incident at any location (incl.\n transfer of calling place into the mask for incident acceptance)."
+  },
+  {
+    "requirement_number": "3.2.7.12",
+    "description": "When an incident is created at a free determined location, the associated\n address, coordinates, or an associated point of interest (POI) should be\n transferred as calling place, where applicable."
+  },
+  {
+    "requirement_number": "3.2.7.13",
+    "description": "Address visualization during the entry into the incident creation\n application (for known addresses in accordance with the stored address\n data) must be provided."
+  },
+  {
+    "requirement_number": "3.2.7.14",
+    "description": "An address visualization for untraceable address objects should be possible in as\n much as that the next higher or next lower (either even or odd) known\n address is displayed, in order to at least be able to set the map sector to the\n correct area this way."
+  },
+  {
+    "requirement_number": "3.2.7.15",
+    "description": "Determination of the responsible PSO Intervention Location (Station\n with Resources) from the area maps must be possible. The responsible\n PSO Location determined in this way must be able to be transferred into the\n incident management application and  the relevant alarming plan must be\n launched."
+  },
+  {
+    "requirement_number": "3.2.7.16",
+    "description": "It must be possible to create different alarm areas in the GIS (polygons). It\n must also be possible to define geographically limited exceptions with other\n responsibilities (“overlapping alarm layer”) within an alarm area or to define\n different responsibilities based on time."
+  },
+  {
+    "requirement_number": "3.2.7.17",
+    "description": "GIS must be able to provide status display and position of\n -\n  organizational units\n -\n  operational resources (salvaging shears, crane, etc.)"
+  },
+  {
+    "requirement_number": "3.2.7.18",
+    "description": "GIS must be able to provide display of hazards, treats, cautions and other object\n related data"
+  },
+  {
+    "requirement_number": "3.2.7.19",
+    "description": "The proposed solution must integrate public available data from\n “Waze”. The GIS must be able to show data from “Waze” using the\n original colors and icons provided by “Waze”. The data to be represented\n includes at minimum:\n -\n  roadblocks\n -\n  traffic jams\n -\n  traffic conditions"
+  },
+  {
+    "requirement_number": "3.2.7.20",
+    "description": "GIS must be able to provide display of alarm indication facilities incl.\n alarming plan for this alarm indication facility"
+  },
+  {
+    "requirement_number": "3.2.7.21",
+    "description": "GIS must be able to provide display of CCTV Camera Location incl. a link to\n access the CCTV to open if permitted"
+  },
+  {
+    "requirement_number": "3.2.7.22",
+    "description": "GIS must be able to provide display of PSO Intervention Locations\n as, police stations, fire brigade houses, etc."
+  },
+  {
+    "requirement_number": "3.2.7.23",
+    "description": "GIS must be able to provide display of operational areas along with\n operating PSOs"
+  },
+  {
+    "requirement_number": "3.2.7.24",
+    "description": "GIS must provide regional and provincial overviews"
+  },
+  {
+    "requirement_number": "3.2.7.25",
+    "description": "GIS must be able to provide context menu functionality\n -\n  POI features\n -\n  alarming plans for buildings, homes, etc."
+  },
+  {
+    "requirement_number": "3.2.7.26",
+    "description": "GIS must provide query and search option by\n -\n  operational resources\n -\n  special operational resources\n -\n  operational resources not in operation within a specific radius of a calling\n place."
+  },
+  {
+    "requirement_number": "3.2.7.27",
+    "description": "It must be possible to administer “pseudo names” (locally well-known\n names for a specific location) for points of interest (POI), characteristic\n points, town parts, buildings, road junctions, path sections and names of\n persons, land names, etc."
+  },
+  {
+    "requirement_number": "3.2.7.28",
+    "description": "In the course of an alarming, it must be checked whether any other unit than\n the responsible one is located better geographically, so that the journey\n time can be reduced. The check should also include units that do not appear\n in the alarming proposal."
+  },
+  {
+    "requirement_number": "3.2.7.29",
+    "description": "It must be possible for the users to create separate layers with specific\n information or with linked information from the basic layers. The number of\n additional layers must not be limited."
+  },
+  {
+    "requirement_number": "3.2.7.30",
+    "description": "Any newly created layer must be able to be distributed to all\n workplaces through the system."
+  },
+  {
+    "requirement_number": "3.2.7.31",
+    "description": "A proposal for the route to the incident location shall be determined by the GIS.\n This shall be able to be printed out in a simple way and exported\n into graphic format."
+  },
+  {
+    "requirement_number": "3.2.7.32",
+    "description": "It must be possible to send the determined incident location to the\n responsible organization or unit by operations printer, e-mail, SMS and must\n be considered as measure in the alarming plan."
+  },
+  {
+    "requirement_number": "3.2.7.33",
+    "description": "The geographic data of the streets and motorways in the\n State of Palestine are characterized by permissions and restrictions of\n different levels (A, B, C zones), that allow or deny transit  to any vehicle,\n or require special authorizations to be presented at passage. (sector\n and/or time depending)\n The proposed GIS software must include a mechanism that takes in\n consideration this characteristic of the street database, when\n calculating the best route for vehicles to be dispatched during an\n incident and present to the dispatcher not only the shortest path, but\n also the clearest path (i.e. the path with less restrictions).\n As a consequence, for each dispatch, the incident management must be able\n to create the proper procedure to generate the permission request (or\n requests) corresponding to the path calculated. These procedures\n to generate permissions might imply printing of documents, making phone\n calls, e-mail, etc.."
+  },
+  {
+    "requirement_number": "3.2.7.34",
+    "description": "It must be possible to display a situation report for the entire region or for\n the individual operational areas at any time from the information\n of the incident management application and the data in the GIS."
+  },
+  {
+    "requirement_number": "3.2.7.35",
+    "description": "A filter and authorized based situation report must furthermore show the\n entire operational situation with all ongoing operations and associated\n units as well as enable the selection of a specific incident and the operational\n forces involved thereby."
+  },
+  {
+    "requirement_number": "3.2.7.36",
+    "description": "Map surfing (shifting, zooming, etc.) must be simple and intuitive, similar to\n over-the-top map viewers such as Google Maps, Bing Maps, etc."
+  },
+  {
+    "requirement_number": "3.2.8.1",
+    "description": "The PSO responsible for the incident and/or also the nearest response team\n must be determined on the basis of the geographical allocation of the incident\n location. This proposal must be able to be changed by the coordinator, where\n applicable."
+  },
+  {
+    "requirement_number": "3.2.8.2",
+    "description": "The following features already required for the incident creation application, are\n also required for the incident management application:\n o access to ERC/PSO operating procedures\n o measure lists\n o assisted data input\n o scheduled incidents\n o incident location extra documentation (attachments)"
+  },
+  {
+    "requirement_number": "3.2.8.3",
+    "description": "The incident management application must provide the possibility for multiple\n coordinators to work on the same incident, in particular it must be possible for\n more than one coordinator to work on incident coordination activities"
+  },
+  {
+    "requirement_number": "3.2.8.4",
+    "description": "It must be possible to assign the incident to multiple PSO if the incident code\n is proposing to do so or if manually set."
+  },
+  {
+    "requirement_number": "3.2.8.5",
+    "description": "Generation of a coordination proposal on the basis of the incident code, alarm\n level, incident location and responsible PSO /PSOs must be performed. The\n coordination proposal must be based on the alarming plans available\n and/or stored in the incident creation application. Both regional as well as\n object alarm plans must be supported."
+  },
+  {
+    "requirement_number": "3.2.8.6",
+    "description": "In addition to the direct involved PSOs, at least the following elements must be\n supported in the coordination proposal as incident resources:\n -\n  other organizations (e.g. utilities, water rescue service, mountain rescue\n service, etc.\n -\n  individual vehicles,\n -\n  individual persons,\n -\n  groups of persons,\n -\n  special equipment or special incident resources"
+  },
+  {
+    "requirement_number": "3.2.8.7",
+    "description": "At least the following elements must be executable in the\n coordination proposal as measures:\n -\n  SMS send,\n -\n  SDS send,\n -\n  telephone calls and radio calls,\n -\n  \nsending of structured e-mails"
+  },
+  {
+    "requirement_number": "3.2.8.8",
+    "description": "The coordination proposal must be able to be adjusted by the coordinator,\n where applicable (removal of individual incident resources or supporting\n measures, addition of other incident resources or supporting measures,\n discard of complete proposal)."
+  },
+  {
+    "requirement_number": "3.2.8.9",
+    "description": "The individual generation of a coordination proposal by the coordinator\n shall be possible. For this purpose, it must be possible to conduct at least the\n following searches:\n -\n  information about access ways\n -\n  search for neighboring incident organization\n -\n  search in the equipment (e.g. vehicles, equipment, special equipment\n items, etc.)\n -\n  search by persons  (e.g. fire brigade, other support organizations,\n administration, army, etc.)\n -\n  important addresses (e.g. fire brigades, rescue stations, hospitals,\n district administrations, etc.)\n -\n  locations of special operational resources (e.g. salvaging shears, crane, etc.)"
+  },
+  {
+    "requirement_number": "3.2.8.10",
+    "description": "It must be possible to use the search results directly in order to implement\n alarming or to call a telephone number. If needed, for example, it must be\n possible to add the operating utility directly to an incident."
+  },
+  {
+    "requirement_number": "3.2.8.11",
+    "description": "The coordination proposal shall ake the availability of special incident\n resources (e.g. special vehicles, special equipment at fire brigades,\n request of a helicopter, etc.) under national responsibility into account."
+  },
+  {
+    "requirement_number": "3.2.8.12",
+    "description": "Both a work-off of the coordination proposal in single steps by the\n coordinator as well an automatic work-off of the entire proposal at a\n start of the coordination must be possible during alarming."
+  },
+  {
+    "requirement_number": "3.2.8.13",
+    "description": "An interruption of an ongoing alarming by e.g. a more important incident in\n terms of operational tactics should be possible. After completed alarming\n for the stopped incident, the interrupted incident should be able to\n be continued on request."
+  },
+  {
+    "requirement_number": "3.2.8.14",
+    "description": "It must be possible to cancel an ongoing alarming manually at any time after a\n safety prompt by the system."
+  },
+  {
+    "requirement_number": "3.2.8.15",
+    "description": "Pre-scheduled incidents must appear on the coordinator screen a certain\n amount of time in advance with respect of their schedule. Once a scheduled\n incident is on screen the coordinator must be entitled to manage it"
+  },
+  {
+    "requirement_number": "3.2.8.16",
+    "description": "The proposed incident application must warn coordinators with an audible\n and visible alarm whenever predefined (configurable) thresholds have been\n exceeded in relation to the incident management (e.g. the incident has not\n reached the \"coordination\" status within a predetermined time)"
+  },
+  {
+    "requirement_number": "3.2.8.17",
+    "description": "A watchdog must exist for the call-out of an alarmed incident of any\n part of the PSO / resource. If a specific time period is exceeded without\n feedback, a message must be displayed by the incident management system\n for the coordinator."
+  },
+  {
+    "requirement_number": "3.2.8.18",
+    "description": "PSO alarmed or called out already must be identified as such, if another\n alarming is required in the course of a new incident. The identification must\n possible to reach up to the level of operational resources (e.g. called\n out vehicles, special equipment)."
+  },
+  {
+    "requirement_number": "3.2.8.19",
+    "description": "When the alarming is implemented, the most important alarming details must\n be sent to the affected responding organizations or individual persons from\n the PSO. At least the following must be considered:\n -\n  incident location,\n -\n  incident code,\n -\n  alarm level,\n -\n  caller information (e.g. name, address, telephone number),\n -\n  additional information (e.g. information regarding access),\n -\n  other information regarding the target object (e.g. special hazards,\n exposition of harmful substances, precautions)."
+  },
+  {
+    "requirement_number": "3.2.8.20",
+    "description": "At least the following elements must be definable in the alarming as\n automatic executed message with the before named data:\n -\n  SMS send,\n -\n  SDS send,\n -\n  sending of structured e-mails"
+  },
+  {
+    "requirement_number": "3.2.8.21",
+    "description": "The incident location and the ERC/PSOs or resources allocated to the\n incident as well as vehicles and equipment must be marked in the incident\n creation application as being in operation and displayed in the GIS\n accordingly as logically belonging together (e.g. incident\n number)."
+  },
+  {
+    "requirement_number": "3.2.8.22",
+    "description": "With the successful alarming of an incident, it must be identified in the incident\n overview as an ongoing incident."
+  },
+  {
+    "requirement_number": "3.2.8.23",
+    "description": "If necessary, it must be possible to raise an alarm level for an incident with\n subsequent re- alarming. Thereby, the additional incident resources or\n measures required in accordance with the stored alarming plan must be\n displayed and worked off in analogy to an initial alarming."
+  },
+  {
+    "requirement_number": "3.2.8.24",
+    "description": "Multiple alarming of PSO Locations or incident resources already in operation\n within the course of any re-alarming must be checked and an appropriate\n information issued to the call center agent and /or coordinator where\n applicable."
+  },
+  {
+    "requirement_number": "3.2.8.25",
+    "description": "An incident marked as ongoing must be able to be amended by comments\n or additional information by the coordinator at any time based on feedback\n by the operational forces on site."
+  },
+  {
+    "requirement_number": "3.2.8.26",
+    "description": "It must be possible to allocate an incident journal to every incident, in which\n the actions and measures taken by the coordination agent during the\n relevant incident are recorded chronologically (operationally-related part of\n the logging). The incident journal must be able to be supplemented by\n manual entries and notes. A manual link with calls and radio\n conversations related to this operation as well as a link to the\n voice recording must be possible."
+  },
+  {
+    "requirement_number": "3.2.8.27",
+    "description": "The incident journal must contain filter function per PSO and deliver a\n chronological closed numbering schema for each PSO."
+  },
+  {
+    "requirement_number": "3.2.8.28",
+    "description": "It must be possible to cancel operations in a simple way if the alarmed\n unit/PSO is not available. An appropriate remark must be able to be added in the\n logging and the incident must be ready for new proposal."
+  },
+  {
+    "requirement_number": "3.2.8.29",
+    "description": "The incident management application must be provided with object-related,\n locality-related and time-related search functions. At least the following\n search functions must be able to be called in:\n -\n  search by persons (names, addresses, reach abilities),\n -\n  search by PSO,\n -\n  search by vehicles,\n -\n  search by operational resources,\n -\n  search by operation number,\n -\n  search by operations where specific operational resources were\n used,\n -\n  time-based search (time period since a specific point in time),\n -\n  location-based search."
+  },
+  {
+    "requirement_number": "3.2.8.30",
+    "description": "It must be possible to log, keep and update the status messages for\n operational resources in incident processing. This relates in particular to the\n following operational resources:\n -\n  operational organizations\n -\n  vehicles\n -\n  special equipment or special operational resources\n -\n  persons"
+  },
+  {
+    "requirement_number": "3.2.8.31",
+    "description": "The status messages are processed manually by the coordinator. However,\n the incident management application must include an automated analysis and\n update of the status messages for the later introduction of a status\n reporting system."
+  },
+  {
+    "requirement_number": "3.2.8.32",
+    "description": "Access to all stored contact data and reachabilities in the system must be\n possible in the course of operation processing. The initiation of telephone and\n radio calls from the incident management application must be possible."
+  },
+  {
+    "requirement_number": "3.2.8.33",
+    "description": "It must be possible to display files with additional information for the\n coordination agent (e.g. PDF and text documents, contents of a dangerous\n goods database, etc.) in the course of incident processing. For this purpose, a\n function for the automatic start of external applications incl. the handover of\n command line parameters (e.g. file location or web URL) must be\n implemented in the incident management application."
+  },
+  {
+    "requirement_number": "3.2.8.34",
+    "description": "The incident management application must allow an incident record\n closure only if predetermined conditions have been met, in particular:\n -\n  all resources have communicated their return to the station\n -\n  an incident coordination has been appended to the incident"
+  },
+  {
+    "requirement_number": "3.2.8.35",
+    "description": "After the entry of all return reports, the incident management application\n must conclude the incident automatically and issue a relevant message\n to the coordination agent. The manual closure of an incident (also in the\n case of incomplete return reports) must be possible and it must be possible to\n add a relevant remark."
+  },
+  {
+    "requirement_number": "3.2.8.36",
+    "description": "All actions and processes in the course of the acceptance of an incident,\n coordination, alarming and operation processing (e.g. reception of\n emergency call, creation of incident, all operationally relevant actions, status\n changes, alarming, re-alarming, etc.) must be recorded with a time stamp\n (consisting of the date and time), the associated user, as well as the relevant\n workplace under the observation of data-protection-relevant standards."
+  },
+  {
+    "requirement_number": "3.2.8.37",
+    "description": "The operational log must be prepared automatically by the\n incident management application"
+  },
+  {
+    "requirement_number": "3.2.8.38",
+    "description": "The records must not get lost in the event of system failures. A\n retrospective change of recorded data must be made impossible."
+  },
+  {
+    "requirement_number": "3.2.8.39",
+    "description": "Retrospective logging of incidents must be possible, in order to enter\n incidents into the system retrospectively that could not be recorded\n immediately. It must be possible to amend incomplete entries with a\n reference to retrospective completion."
+  },
+  {
+    "requirement_number": "3.2.8.40",
+    "description": "The logging must be performed centrally within the system. It must be possible\n to process log entries beyond day limits. Temporary log entries or files (for\n queuing or caching) must be removed from the hard disk after a configurable\n time period and a completed archiving."
+  },
+  {
+    "requirement_number": "3.2.8.41",
+    "description": "The log data must be held in the system for a period of 2 years, in order\n to enable a quick access to data from this time period in the case\n of need."
+  },
+  {
+    "requirement_number": "3.2.8.42",
+    "description": "A search in the log for e.g. incomplete operational data or the\n time sequence of operations with a change of operation\n processing should be possible."
+  },
+  {
+    "requirement_number": "3.2.8.43",
+    "description": "A simple administrative option (time or occasion- related search and analysis\n function) of the log should be provided for any query or reconstruction of\n operations at a later stage"
+  },
+  {
+    "requirement_number": "3.2.8.44",
+    "description": "A printout of the logging data must also be provided on request, either in\n incremental form (related to all new data sets since the last printout)\n or all data sets within a specific period of time selectable by the user."
+  },
+  {
+    "requirement_number": "3.2.8.45",
+    "description": "An export of the log or the search results in a data format that is\n readable for an office program for takeover and further processing\n must be provided."
+  },
+  {
+    "requirement_number": "3.2.8.46",
+    "description": "The  recordings of the voice documentation allocated to an operation\n should be able to be retrieved through the incident management\n application"
+  },
+  {
+    "requirement_number": "3.2.8.47",
+    "description": "The loggings of the incident management application in conjunction\n with the operationally-related voice recording of the NG- 911 communication\n system must result in a full documentation of all operationally-relevant\n activities of the emergency operations center."
+  },
+  {
+    "requirement_number": "3.2.9.1",
+    "description": "The Application must support at least Google Android and Apple iOS operative\n systems"
+  },
+  {
+    "requirement_number": "3.2.9.2",
+    "description": "There must be no license-limitations on the number of installations\n respective active applications"
+  },
+  {
+    "requirement_number": "3.2.9.3",
+    "description": "The Supplier must provide a Mobile Device Management (MDM) platform\n software, for the remote management of tablets linked to the ERC"
+  },
+  {
+    "requirement_number": "3.2.9.4",
+    "description": "It must be able to store data locally, in cases of loss of 3G/4G/Wi-Fi connection"
+  },
+  {
+    "requirement_number": "3.2.9.5",
+    "description": "It must be associated with a vehicle using the vehicle's identification number"
+  },
+  {
+    "requirement_number": "3.2.9.6",
+    "description": "It must allow user access via username, password and vehicle code"
+  },
+  {
+    "requirement_number": "3.2.9.7",
+    "description": "It must be able to receive incident information via push notification, with\n minimum\n -\n  location of the incident\n -\n  motivation of the incident\n -\n  information about the caller\n -\n  any note taken at the dispatching center in the given incident"
+  },
+  {
+    "requirement_number": "3.2.9.8",
+    "description": "It must be able to navigate the vehicle where the tablet is installed using the\n vehicle's GPS coordinates and the incident destination address"
+  },
+  {
+    "requirement_number": "3.2.9.9",
+    "description": "It must be able to add notes to the incident form received by the dispatching\n center and send back the added information to the Dispatching center as\n enrichment of the incident data."
+  },
+  {
+    "requirement_number": "3.2.9.10",
+    "description": "It must be able to send dispatch status advancement reports via\n encoded statuses.\n -\n  Encoded statuses must correspond to what is currently available in the\n existing incident management software\n -\n  Encoded statuses must be configurable, using the master configurator\n interface of the current existing incident management software\n -\n  Encoded statuses must be represented by a graphical icon and a text line\n describing the status that is being sent to the current existing incident\n management software\n -\n  Encoded statuses must be sent in real time, with the appropriate time\n stamp. In case of loss of 3G/4G/Wi-Fi connection, the status message must be\n stored temporarily on the device, to be sent when the connection is re\n established, but maintaining the correct time-stamp of origin"
+  },
+  {
+    "requirement_number": "3.2.9.11",
+    "description": "It must be able to capture pictures and videos to be attached to the incident\n and send them to the existing incident management software"
+  },
+  {
+    "requirement_number": "3.2.9.12",
+    "description": "It must include a list of cases managed by the vehicle where the tablet is\n installed, with their current status, for at least the last 24 hours of\n service"
+  },
+  {
+    "requirement_number": "3.2.9.13",
+    "description": "It must include a customizable template for reports. The template has to\n have at least the following features:\n ■\n  It must be editable by the tablet user, using fields such as:\n -\n  Radio buttons\n -\n  Check buttons\n -\n  Drop-down menus\n -\n  Free text boxes\n -\n  Speech-to-text functionality for free text boxes\n -\n  Custom reports such as colored fields, etc.\n ■\n  It must correspond to the original paper reports, structured in editable fields\n -\n  Each currently used reporting will be analyzed by the Supplier and be\n transported digitally, using the template inside the tablet app\n -\n  The digitalized report must be attached to the incident and sent to the\n existing incident management software\n -\n  The digitalized report must be in PDF format, and printable on any printer"
+  },
+  {
+    "requirement_number": "3.2.9.14",
+    "description": "It must include a chat functionality to allow the vehicle crew members to\n chat with the Dispatching center, through the existing incident\n management software and with other crew members from other\n vehicles, associated to the same incident."
+  },
+  {
+    "requirement_number": "3.2.10.1",
+    "description": "The software must have a quality control (audit) function that allows\n evaluation of the incident information according to the set criteria, both\n before the incident is closed and when the incident is closed."
+  },
+  {
+    "requirement_number": "3.2.10.2",
+    "description": "The quality control (audit) function (completed forms) shall not affect (e.g.\n change or delete) the information and timestamps recorded on the incident."
+  },
+  {
+    "requirement_number": "3.2.10.3",
+    "description": "The quality control (audit) function shall be able to be performed at shift level\n (e.g. shift manager), unit level (e.g.E-1Ma unit manager or authorized\n employee) and centrally (e.g. quality control unit employee)."
+  },
+  {
+    "requirement_number": "3.2.10.4",
+    "description": "The quality control (audit) function shall be able to process the data at least\n from the following sources:\n • call history data\n • incident creation data (incident classification, incident\n location, caller location)\n • assistance history\n • appropriateness of incident data (rate of proper incident\n classification, incident modification history)"
+  },
+  {
+    "requirement_number": "3.2.10.5",
+    "description": "The quality control (audit) function shall be able to provide report at least\n about the following levels:\n • general (full ERC) quality / performance report\n • group quality / performance report (based on selected group\n characteristics, e.g. site, skill or language, shift etc.)\n • individual quality / performance report per user\n • process appropriateness report (e.g. the ration of modified incidents by\n coordinator vs. completed incidents)"
+  },
+  {
+    "requirement_number": "3.2.10.6",
+    "description": "The reporting tool itself can be combined with the tool supporting the\n monitoring and alarm handling function (item 3.4.1), but its inputs,\n algorithms, functions, report formats, presentation mode shall\n be separately configurable for system monitoring and quality management\n purposes."
+  },
+  {
+    "requirement_number": "3.3.1.1",
+    "description": "The incident creation and management application must use a Data\n base management System (DBMS) which is centrally located on the to be\n provided servers."
+  },
+  {
+    "requirement_number": "3.3.1.2",
+    "description": "With the DBMS sufficient licensing to support all functions and applications\n provided within this Service must be included. The licensing must also cover any\n upgrade/update free of charge of the DBMS when required for the operation\n of the provided software. Software assurance control must be provided."
+  },
+  {
+    "requirement_number": "3.3.1.3",
+    "description": "The incident creation and management DBMS has to support all functions\n as specified under 1.2.6 and 1.2.8"
+  },
+  {
+    "requirement_number": "3.3.1.4",
+    "description": "The DBMS must ensure that a malfunction of any component of the hardware\n will not result in a malfunction of the DBMS and will not cause a\n malfunction of the software nor the need for users to re-connect to the\n software."
+  },
+  {
+    "requirement_number": "3.3.1.5",
+    "description": "The DBMS architecture must ensure that the second data-center contains a\n secondary DBMS that operates analogously and parallel manner to the host\n and has all the relevant software information provided by asynchronous\n replication. Information replication delay in the absence of network failures\n shall not exceed 1 minute. The software shall use the primary DBMS in\n normal mode and only automatically breaks down to use the secondary\n DBMS if it fails."
+  },
+  {
+    "requirement_number": "3.3.1.6",
+    "description": "The type of DBMS must be licensed to support the under 1.3.1.6 described\n functions, e.g. offering full capability of clustering and replication (e.g.\n enterprise version)"
+  },
+  {
+    "requirement_number": "3.3.1.7",
+    "description": "DBMS must ensure a remote backup DB (DB snapshots) which provides\n storage of at least 7 days of DB copies."
+  },
+  {
+    "requirement_number": "3.3.2.1",
+    "description": "The GIS shall use different offline as well as online data sources (open street\n maps, google, as well as customer provided datasets)"
+  },
+  {
+    "requirement_number": "3.3.2.2",
+    "description": "The GIS System must be installed in a redundant way, following the\n failover/redundancy concept so that a failure in one server site does not affect\n the overall availably of GIS related functions. ."
+  },
+  {
+    "requirement_number": "3.3.2.14",
+    "description": "GIS file formats must be readable from other GIS systems in order to perform conversions between different formats."
+  },
+  {
+    "requirement_number": "3.3.2.15",
+    "description": "Geographic information and information management must comply to ISO TC211 and recommended CEN TC287 standards."
+  },
+  {
+    "requirement_number": "3.3.2.16",
+    "description": "The GIS system must offer the basic data layers including projection, scale, accuracy, and resolution."
+  },
+  {
+    "requirement_number": "3.3.2.17",
+    "description": "Real time mapping of geospatial data must be enabled in order to offer the best understanding of the geographic patterns."
+  },
+  {
+    "requirement_number": "3.3.5.3",
+    "description": "The solution shall be available for 2 concurrent users"
+  },
+  {
+    "requirement_number": "3.3.5.4",
+    "description": "The access authority system shall support different user categories that can be allocated to individual users and based on which it is defined what functionalities can be inspected and/or changed by certain users."
+  },
+  {
+    "requirement_number": "3.3.5.5",
+    "description": "At least the following user categories shall be possible:\n • system engineer\n • quality analyst\n • quality manager\n • supervisor"
+  },
+  {
+    "requirement_number": "3.3.5.6",
+    "description": "The solution must be operable through menus and menu structures. Command line entries for operation of the abovementioned functions are not permissible."
+  },
+  {
+    "requirement_number": "3.3.7.7",
+    "description": "The user interface of the applications shall be designed in accordance with ergonomic principles and the current state of technology for such a system. For this purpose, the following must be fulfilled:\n - clearly structured contents, reduced number of windows,\n - continuous display and color concept (same items and functionalities are displayed in the same way in different windows),\n - expressive captions of fields, keys, command buttons, column headers, etc.\n - no overload by e.g. overlapping windows"
+  },
+  {
+    "requirement_number": "3.3.7.8",
+    "description": "The basic functionalities (at least NG-911 call- taking and incident creation) of the operations control system shall also be able to be operated by persons who are not on duty regularly."
+  },
+  {
+    "requirement_number": "3.3.7.9",
+    "description": "The software user computerized workstation interface design shall be consistent with Microsoft Fluent Design System, ISO 9241 or other similar recommendations."
+  },
+  {
+    "requirement_number": "3.3.7.10",
+    "description": "The applications shall have the possibility to print out the information from the screen to a configured printer."
+  },
+  {
+    "requirement_number": "3.3.9.4",
+    "description": "The entire system must operate non-stop under typical climatic conditions (ambient temperature range from 10°C up to 35°C and humidity range from 20% to 80%)."
+  },
+  {
+    "requirement_number": "3.3.9.5",
+    "description": "The individual PSO will each operate their own environment (locations), which will be a standard office setup without special IT conditions (e.g. No Air Conditioning, or Filter of Air), the system shall support that operations mode."
+  },
+  {
+    "requirement_number": "3.3.10.1",
+    "description": "The service of the whole system shall be available 24/7 without any interruption. The availability requirement from total system point of view, shall be at least 99.99%. This requirement is to be interpreted as follows: The probability of total system break down due to any failure/error of any system components must not be more than 0.01%, i.e. the cumulative down time of the total system due to failure must not exceed 52 minutes in a year."
+  },
+  {
+    "requirement_number": "3.3.10.2",
+    "description": "All system critical components shall provide high availability by implementing the components as a distributed system which shares the work load among the installed components. The system shall not contain standby components (either hot or cold) which need to be manually\n activated in case of failure of the primary system."
+  },
+  {
+    "requirement_number": "3.3.10.6",
+    "description": "In case of system failures after updates or changes of the configuration it must be possible to restore the last tested and operational software version and configuration."
+  },
+  {
+    "requirement_number": "3.3.10.7",
+    "description": "The system shall be configured that in case of a failure of a single component the alternate components- if available- takes over automatically without human intervention (automated failover)."
+  },
+  {
+    "requirement_number": "3.3.10.8",
+    "description": "All critical system components shall have a typical Mean Time Before Failure (MTBF) of at least 5 years. For components and parts which cannot fulfil this requirement individual redundancy has to be installed."
+  },
+  {
+    "requirement_number": "3.3.11.1",
+    "description": "IP Based Telephony exchange service (multimedia), CTI, ACD and IVR"
+  },
+  {
+    "requirement_number": "3.3.13.39",
+    "description": "The SMTP relays must use security mechanisms like virus and malware detection to protect the system. The SMTP relay shall as well support SMTPS."
+  },
+  {
+    "requirement_number": "3.3.13.40",
+    "description": "The SMTP relays must monitor and report any abnormality to the monitoring system."
+  },
+  {
+    "requirement_number": "3.3.13.41",
+    "description": "The SMTP relay shall support text for a standard format on mail (form generator) 3rd party systems, as of supporting multiple formats based on incident type. This shall be used for sending structured emails to external recipients (Police, EMS) where incident related data as well as an incident ID for further communication can be provided, filled and processed by the external system (Record Management)"
+  },
+  {
+    "requirement_number": "3.3.13.42",
+    "description": "Forms/texts must be freely configurable by the administrator"
+  },
+  {
+    "requirement_number": "3.3.13.43",
+    "description": "The forms shall allow the setup as XML message according to a defined data model."
+  },
+  {
+    "requirement_number": "3.3.13.44",
+    "description": "Detailed description on the forms will be set in the Detail design phase."
+  },
+  {
+    "requirement_number": "3.3.13.45",
+    "description": "The system shall use of contact lists or individual email-addresses as part of the contact information for sending messages."
+  },
+  {
+    "requirement_number": "3.3.13.46",
+    "description": "The system shall support acknowledgment of returning mails to an incident via"
+  },
+  {
+    "requirement_number": "3.3.14.5",
+    "description": "All computers on all workplaces must be installed at least with an Operating System, Anti-Virus Software and PDF-Reader function."
+  },
+  {
+    "requirement_number": "3.3.14.6",
+    "description": "At the working positions UPS respective Generator supported power with 230V, 50Hz will be provided on Type C, respective Type H. At least 2 RJ45 outlets per working position must provide PoE (Power over Ethernet)."
+  },
+  {
+    "requirement_number": "3.3.14.7",
+    "description": "These computers must be powerful enough to provide instantaneous responsive user interfaces for all used client applications like NG-911, Incident Applications, GIS, CTI."
+  },
+  {
+    "requirement_number": "3.3.14.8",
+    "description": "The desktop configuration of the operation system and the configuration of the applications at the client computers must be user/user-group based and not client based."
+  },
+  {
+    "requirement_number": "3.4.1.9",
+    "description": "All components must be prominently labelled with a unique ID, component type, MAC and IP addresses."
+  },
+  {
+    "requirement_number": "3.4.1.10",
+    "description": "In case of tangible elements, the ID has to be printed on the label in a human readable form and if requested as a machine-readable code."
+  },
+  {
+    "requirement_number": "3.4.1.11",
+    "description": "All cables must be labelled on each end with the component and port it has to be connected to. Cables longer than 10m must be labelled with a unique ID every 5 meter."
+  },
+  {
+    "requirement_number": "3.4.1.12",
+    "description": "In case of system/version upgrades/updates, replacements, the update of the database shall be supported."
+  },
+  {
+    "requirement_number": "3.4.1.13",
+    "description": "The access to this database must be protected by the authentication mechanisms."
+  },
+  {
+    "requirement_number": "3.4.1.38",
+    "description": "The statistics should be retrievable both as PDF files as well as graphical and text files and e.g. also be able to be shown continuously on monitors of the visualization system."
+  },
+  {
+    "requirement_number": "3.4.1.39",
+    "description": "The Bidder must enclose a Concept – Voice Communication Statistics with his offer. The concept shall list the available Voice Communication statistics and include exemplary screenshots."
+  },
+  {
+    "requirement_number": "3.4.1.40",
+    "description": "An intelligent reporting system has to be included in the offer, translating the results of the monitoring and alarm and fault handling functions into well-structured reports."
+  },
+  {
+    "requirement_number": "3.4.1.41",
+    "description": "Different levels of report shall be able to define and presented both in a pre-set"
+  },
+  {
+    "requirement_number": "3.4.2.15",
+    "description": "The software must be protected against:\n - unauthenticated access;\n - unauthorized user session interception;\n - unauthorized interception or insertion,\n - modification or deleting of data"
+  },
+  {
+    "requirement_number": "3.4.2.16",
+    "description": "Depending on the architecture, the Bidder must provide the required number of certificates that will be used to encrypt the information transmitted / received by all users;"
+  },
+  {
+    "requirement_number": "3.4.2.17",
+    "description": "The certificate used for encryption must be verified by a qualified certificate (such as Veri Sign or similar) that can be automatically checked by popular web browsers, meaning that the workplace user does not need to independently add the certificate to the trusted certificate store of the browser or operating system."
+  },
+  {
+    "requirement_number": "3.4.2.18",
+    "description": "The system has to log any attempts of downloading, saving, exporting, forwarding, printing of any data/information/communication linked to natural persons onto uncontrolled external devices (e.g. USB drives, CD, device not part of the system delivered, addresses etc.)"
+  },
+  {
+    "requirement_number": "3.4.2.29",
+    "description": "The system has to log any attempts of downloading, saving, exporting, forwarding, printing of any data/information/communication linked to natural persons onto uncontrolled external devices (e.g. USB drives, CD, device not part of the system delivered, addresses etc.)"
+  },
+  {
+    "requirement_number": "3.4.2.30",
+    "description": "The system has to assure, that for testing, fault handling and training purposes only de- personalized data could be used. If – in exceptional cases - this cannot be assured (like fault tracing in special cases), the system shall present a logged warning message."
+  },
+  {
+    "requirement_number": "3.4.2.31",
+    "description": "The system shall support the identification and tracking of any (personal) data incidents."
+  },
+  {
+    "requirement_number": "4.4.2.1",
+    "description": "The Bidder shall include in his Offer a Call taker / Specialist training program. The Call taker / Specialist training shall be organized on a “train the trainers” basis. The training to be provided directly by the Supplier shall theoretically and practically prepare the participants to use the call taking, incident creation and incident management functions according to the processes defined and programmed in the implementation phase. • Indicative number of participants: at least 20 (call taker) + 10 (specialist) persons, organized in effective groups. • At least 5 persons from the most successful trainees has to get an additional training to get key users and trainers of next training groups. • Language of the training shall be Arabian. However, parts of the training dealing with the screens and questionnaires in English language shall be organized for the specific group of English speaking trainees."
+  },
+  {
+    "requirement_number": "4.4.2.2",
+    "description": "The Bidder shall include in his Offer a Coordinator training program. The Coordinator training shall be organized on a “train the trainers” basis. The training to be provided directly by the Supplier shall theoretically and practically prepare the participants to understand and process the incidents delivered by the system as well as using the system functions relevant for the management and handling the incidents in their specific organization. • Trainings shall be organized on a User organization basis, taking into consideration the specificities of the different PSOs. • Indicative number of participants: 20 persons, organized in effective groups • At least 2 persons of the most successful trainees from each User organizations have to get an additional training to get key users and trainers of next training groups. • Language of the training shall be Arabic."
+  },
+  {
+    "requirement_number": "4.4.3.1",
+    "description": "The Bidder shall include in his Offer an Administrator training program. The\n training to be provided directly by the Supplier shall theoretically and practically prepare the participants to use the system’s administrative, statistical, reporting and BI functions as well as process/workflow definition function of the system. • Indicative number of participants: up-to 6 persons • Language of the training shall be Arabian"
+  },
+  {
+    "requirement_number": "4.4.3.2",
+    "description": "The Bidder shall include in his Offer a System administrator / Engineer training program. The training to be provided directly by the Supplier shall theoretically and practically prepare the participants to monitor, operate, maintain and administer the system and to provide help-desk and user support services. • A basic system training – prior to the factory acceptance tests – shall be included. • Indicative number of participants: up to 8 persons have to be trained to System administrator level. • At least 3 from the most successful trainees have to be further educated to reach system engineer level. Language of the training shall be English and/or Arabian."
+  },
+  {
+    "requirement_number": "4.4.4.1",
+    "description": "The Bidder shall include in his Offer a Management training program. The Management training shall provide a basic system knowledge to the leaders of the Beneficiary and User organizations directly not involved in the daily operation of the system but leading the users of the system. • Indicative number of participants: up-to 16 persons. • Language of the training shall be Arabian"
+  },
+  {
+    "requirement_number": "4.5.1.1",
+    "description": "Provide data conversion and importing of customer provided files (xls, doc,.shp.) for at least but not limited to: • Users • Phonebook • POI • Measures • Types of incidents • Questions and Answers • Resources • Mapping details"
+  },
+  {
+    "requirement_number": "4.6.1.1",
+    "description": "The Supplier shall prepare and submit the following design documents before starting the delivery and installation: • High Level Design (HLD) – it shall be submitted latest 30 days after project commencement • Detailed System Design (DSD) – it shall be submitted latest 60 days after approval of HLD • Test design – it shall be submitted min. 30 days prior to the specific test starts • Design of migration, commissioning and operational launch – it shall be submitted latest 60 days after approval of DSD."
+  },
+  {
+    "requirement_number": "4.6.1.2",
+    "description": "All these designs must be submitted to the contracting authority/consultant/beneficiary for review in electronic format. The review period of the documents shall not exceed 15 calendar days. Within this period the contracting authority shall send in writing its comments and shall set the\n deadline for making the required corrections. The updated design documents shall be considered final subject to contracting authority’s approval and consultant’s/beneficiary's agreement"
+  },
+  {
+    "requirement_number": "4.6.1.3",
+    "description": "Final approved design documents shall be re- submitted in electronic format to the contracting authority/consultant/beneficiary and one printed version to the contracting authority."
+  },
+  {
+    "requirement_number": "4.6.1.4",
+    "description": "Weekly progress reports (in electronic format) to the contracting authority, beneficiary and consultant, to be delivered from the 5th week of the implementation period until the end of the implementation period (describing the progress vs plan in the field of design, production, delivery, installation/construction, testing, fixing issues found during inspections, plans for the next week(s), problems, requests for help). The weekly reports shall be the basis of the regular weekly operative meeting of the Supplier, beneficiary and consultant, and shall be accepted by the contracting authority"
+  },
+  {
+    "requirement_number": "4.6.1.5",
+    "description": "Monthly progress summary to the contracting authority, beneficiary and consultant with the same content requirements as the weekly reports. The monthly progress summary shall be the basis of the regular monthly progress meeting of the contracting authority, Supplier, beneficiary and consultant, and shall be accepted by the contracting authority"
+  },
+  {
+    "requirement_number": "4.6.1.6",
+    "description": "The Supplier shall present Final System Documentation that includes all modifications of documentation provided during the contract execution minimum 10 days before provisional acceptance procedure commencement. Final System Documentation shall contain at least:\n a) A list of all licenses and the license certificates\n b) The HLD and DSD documents, updated with all changes during the implementation phase\n c) A complete inventory of all hardware and software components (as specified under item 5 of the technical specifications), including a complete list of equipment per site and updated list of equipment/devices necessary for the system operation – provided by the Beneficiary before project implementation. It shall include name, type, quantity and serial number(s).\n d) COTS component documentations\n e) Proposed system level inputs to DRP and BCP\n f) Description of all external interfaces of the system.\n g) Documentation related to all software included with the system, with clear identification on versions\n h) All test reports as well as certificates and compliance statements by the manufacturers and Supplier.\n i) All change requests scheduled for a later date than Provisional Acceptance\n j) Detailed description and user manual for the process (incl. questionnaire and template) development, testing and migration environment\n k) Detailed description and user manual of the BI and workflow engine functions\n l) All user documents, manuals, O/M/A guides\n m) Full training documents (presentations, narrative and CD/DVDs) for all of the training programs.\n n) List of proposed spare units\n o) Draft SLA for the Warranty period\n p) Proposed SLA/System support agreement for the period after the Warranty period"
+  },
+  {
+    "requirement_number": "4.7.1.1",
+    "description": "Project Team Leader: must have experience as project manager on at least one similar type emergency response center project (multi agency / multi locations)."
+  },
+  {
+    "requirement_number": "5.0.1.1",
+    "description": "Graphical user interfaces in Arabian and English languages, designed, delivered, installed, integrated, tested and commissioned"
+  },
+  {
+    "requirement_number": "5.0.1.2",
+    "description": "Support characters, base import but must be Arabic (ISO 8859-\n 6) and English (ISO 8859-1) and at least for administrative issues in English. Output must be primary in Arabic"
+  },
+  {
+    "requirement_number": "5.0.2.1",
+    "description": "All active (powered) equipment must operate on 220-240V, 50Hz"
+  },
+  {
+    "requirement_number": "5.0.2.2",
+    "description": "All active equipment must include power plugs standard in the State of Palestine (Type C, respective Type H)"
+  },
+  {
+    "requirement_number": "5.0.2.3",
+    "description": "All server connecting cables must be provided according IEC 60320 C13/14\n respective C15 /C16"
+  },
+  {
+    "requirement_number": "5.0.3.1",
+    "description": "Unless otherwise specified, all equipment must operate in environments of 10°C up to 35°C"
+  },
+  {
+    "requirement_number": "5.0.3.2",
+    "description": "Unless otherwise specified, all equipment must operate in environments 0-\n 40 grams per cubic meter of dust"
+  },
+  {
+    "requirement_number": "5.0.3.3",
+    "description": "Unless otherwise specified, all equipment must operate in environment humidity range from 20% to 80%"
+  },
+  {
+    "requirement_number": "5.0.4.1",
+    "description": "Noise emission for the equipment outside the server areas shall be maximal 30 dB during normal operation"
+  },
+  {
+    "requirement_number": "5.1.1.1",
+    "description": "Computing Hardware Specifications"
+  },
+  {
+    "requirement_number": "6.2.1.1",
+    "description": "The Bidder shall assure and clearly state that his planned test activity will cover the complete scope of this supply and will assure the functional, technical and operational compliance of the system to be delivered. In order to demonstrate this the Bidders are requested to describe in their Offer the proposed\n • the proposed high-level commissioning procedure\n • high level test program, including (but not limited to):\n o Factory test\n o On-site developers’ tests\n o Functional, performance, interoperability and system management tests\n o User tests\n o Trial Operation\n • the proposed duration and timing of the test phases\n • the proposed involvement of the Beneficiary, User organizations and Consultant\n • the proposed mode of test management, RR and CR handling."
+  },
+  {
+    "requirement_number": "6.2.1.2",
+    "description": "The proposed test methodology shall be able to justify, that the system meets the availability, performance and traffic handling requirements. In order to demonstrate this the Bidders are requested to describe their test methodologies and testing tools."
+  },
+  {
+    "requirement_number": "7.3.1.5",
+    "description": "Implementation / Delivery Expert with experience in the rollout of a multi agency / multi locations ERC software. The Supplier must provide certification from at least one customer of emergency services stating that the position has been performed successfully"
+  },
+  {
+    "requirement_number": "7.3.1.6",
+    "description": "Service, Helpdesk and Warranty Expert, with experience in setup and operation\n of post operational acceptance assistance"
+  }
+]
+

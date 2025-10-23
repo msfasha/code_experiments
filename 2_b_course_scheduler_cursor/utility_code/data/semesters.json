@@ -1,0 +1,22 @@
+[
+  {
+    "semester_code": "20241",
+    "courses": [
+      "307101",
+      "307102",
+      "307201"
+    ],
+    "start_date": "2025-01-01",
+    "end_date": "2025-04-01",
+    "mid_exam_date": "",
+    "final_exam_date": ""
+  },
+  {
+    "semester_code": "20242",
+    "courses": [
+      "307202",
+      "307203",
+      "307204"
+    ]
+  }
+]

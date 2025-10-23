@@ -1,0 +1,359 @@
+[
+    {
+        "course_code": "307101",
+        "course_title": "Introduction to Business Intelligence",
+        "course_type": "Compulsory",
+        "level": 1,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307102",
+        "course_title": "Descriptive Statistics for Businesses",
+        "course_type": "Compulsory",
+        "level": 1,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307201",
+        "course_title": "Data Management and Analytics",
+        "course_type": "Compulsory",
+        "level": 2,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307202",
+        "course_title": "Programming Basics for Business Intelligence",
+        "course_type": "Compulsory",
+        "level": 2,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307203",
+        "course_title": "Spreadsheets Management and Design for Business Intelligence (VBA)",
+        "course_type": "Compulsory",
+        "level": 2,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307204",
+        "course_title": "Introduction to Databases for Businesses",
+        "course_type": "Compulsory",
+        "level": 2,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307205",
+        "course_title": "Business Strategies and Enterprise Resource Planning for Businesses",
+        "course_type": "Compulsory",
+        "level": 2,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307301",
+        "course_title": "Business Intelligence Programming",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307302",
+        "course_title": "Artificial Intelligence and Machine Learning for Businesses",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307303",
+        "course_title": "Legislation and Ethics for Data and Businesses",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307304",
+        "course_title": "Business Intelligence and Data Mining",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307305",
+        "course_title": "Cybersecurity Applications for Business Intelligence",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307306",
+        "course_title": "Decision Support Systems for Business Intelligence",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307401",
+        "course_title": "Big Data and Data Warehouse",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307402",
+        "course_title": "Data Management Predictive Analysis and Visualization",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307403",
+        "course_title": "Project Management for Business Intelligence",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307498",
+        "course_title": "Graduation Project / Field Training",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "9307000",
+        "course_title": "Community Service (BI & DA)",
+        "course_type": "Compulsory",
+        "level": null,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307206",
+        "course_title": "Data Visualisation Techniques for Businesses",
+        "course_type": "Elective",
+        "level": 2,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307207",
+        "course_title": "Content Management Systems",
+        "course_type": "Elective",
+        "level": 2,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307307",
+        "course_title": "Business Intelligence Methods and Models",
+        "course_type": "Elective",
+        "level": 3,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307308",
+        "course_title": "Semantic Technologies for Big Data",
+        "course_type": "Elective",
+        "level": 3,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307404",
+        "course_title": "Advanced Analytics for Supporting Business Intelligence Processes",
+        "course_type": "Elective",
+        "level": 4,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307405",
+        "course_title": "Mobile Programming for Business Intelligence Applications",
+        "course_type": "Elective",
+        "level": 4,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "307406",
+        "course_title": "Special Topics in Business Intelligence",
+        "course_type": "Elective",
+        "level": 4,
+        "department": "Business Intelligence"
+    },
+    {
+        "course_code": "304100",
+        "course_title": "اساسيات تكنولوجيا المعلومات -الإدارية",
+        "course_type": "Compulsory",
+        "level": 1,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304101",
+        "course_title": "مقدمة في الاعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 1,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304201",
+        "course_title": "تقنيات الاعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 2,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304203",
+        "course_title": "استراتيجيات الأعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 2,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304208",
+        "course_title": "برمجة تطبيقات الأعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 2,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304301",
+        "course_title": "قواعد البيانات للأعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304304",
+        "course_title": "نماذج و عمليات الأعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304305",
+        "course_title": "امن نظم مواقع الشبكة المعلوماتية",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304311",
+        "course_title": "إدارة شبكات التواصل الاجتماعي والعلاقة الإلكترونية مع الزبائن",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304314",
+        "course_title": "تصميم و تطوير مواقع الأنترنت",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304315",
+        "course_title": "التجارة  و الدفع الإلكتروني",
+        "course_type": "Compulsory",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304401",
+        "course_title": "الإدارة الإلكترونية لسلسلة التزويد",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304402",
+        "course_title": "أنظمة الأعمال الذكية",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304403",
+        "course_title": "تطوير نظم الأعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304405",
+        "course_title": "القضايا القانونية و الأخلاقية في الاعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304411",
+        "course_title": "الريادة و بناء خطة عمل المشروع",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304412",
+        "course_title": "أدوات و تطبيقات الأعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304413",
+        "course_title": "تكنولوجيا الوسائط المتعددة",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304414",
+        "course_title": "إدارة مشاريع ألأعمال الإلكترونية",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304498",
+        "course_title": "مشروع تخرج / تدريب ميداني",
+        "course_type": "Compulsory",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304307",
+        "course_title": "التعليم الإلكتروني",
+        "course_type": "Elective",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304309",
+        "course_title": "التجارة الإلكترونية المتنقلة",
+        "course_type": "Elective",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304312",
+        "course_title": "الحكومة الإلكترونية و إدارة التغيير",
+        "course_type": "Elective",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304313",
+        "course_title": "برمجة تطبيقات الأعمال الإلكترونية المتقدمة",
+        "course_type": "Elective",
+        "level": 3,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304407",
+        "course_title": "موضوعات متقدمة في الأعمال الإلكترونية",
+        "course_type": "Elective",
+        "level": 4,
+        "department": "Electronic Business"
+    },
+    {
+        "course_code": "304499",
+        "course_title": "مهارات مهنية في الأعمال والتجارة الإلكترونية",
+        "course_type": "Elective",
+        "level": 4,
+        "department": "Electronic Business"
+    }
+]

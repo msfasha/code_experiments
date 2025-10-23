@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "Mohammad Fasha",
+        "department": "Business Intelligence",
+        "course_codes": [
+            "307102",
+            "307304",
+            "307307",
+            "307401"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Mohammad Al Khaldi",
+        "department": "Business Intelligence",
+        "course_codes": [
+            "307101",
+            "307201",
+            "307202",
+            "307203"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Bilal Sowan",
+        "department": "Business Intelligence",
+        "course_codes": [
+            "307204",
+            "307205",
+            "307301",
+            "307302"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Mohammad Nofal",
+        "department": "Business Intelligence",
+        "course_codes": [
+            "307303",
+            "307305",
+            "307306",
+            "307402"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Husam Barham",
+        "department": "Business Intelligence",
+        "course_codes": [
+            "307206",
+            "307207",
+            "307403",
+            "307498"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Faisal Abu Al Rub",
+        "department": "Business Intelligence",
+        "course_codes": [
+            "307308",
+            "307404",
+            "307405",
+            "307406"
+        ]
+    }
+]
