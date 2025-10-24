@@ -189,6 +189,12 @@ class NetworkLoader:
         """
         return self.current_network
     
+    def get_network(self):
+        """
+        Get the EPyT network object
+        """
+        return self.current_network
+    
     def is_network_loaded(self) -> bool:
         """
         Check if a network is currently loaded

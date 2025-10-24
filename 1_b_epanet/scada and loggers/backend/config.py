@@ -26,7 +26,7 @@ LOGS_DIR = BASE_DIR / "logs"
 LOGS_DIR.mkdir(exist_ok=True)
 
 # SCADA simulation settings
-DEFAULT_SIMULATION_INTERVAL = 30  # seconds
+DEFAULT_SIMULATION_INTERVAL = 2  # seconds
 DEFAULT_TIME_WINDOW = 5  # seconds tolerance
 
 # Anomaly detection settings

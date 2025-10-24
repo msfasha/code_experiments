@@ -74,6 +74,12 @@ export const networkAPI = {
     await apiClient.delete('/network/clear');
   },
 
+  // Get network plot
+  getNetworkPlot: async (): Promise<{ image: string }> => {
+    const response = await apiClient.get('/network/plot');
+    return response.data;
+  },
+
   // Test network API
   testNetworkAPI: async (): Promise<any> => {
     const response = await apiClient.get('/network/test');

@@ -9,7 +9,7 @@ from api.scada import router as scada_router
 from api.monitoring import router as monitoring_router
 
 # Import database models to ensure they're registered
-from models.database import Base, engine
+from models.database import Base, engine, SessionLocal
 from models.tables import SCADAReading, SCADASimulatorConfig, MonitoringResult, NetworkComponent
 
 # Create database tables
@@ -30,6 +30,23 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.on_event("startup")
+async def startup_event():
+    """Reset simulator state on server startup"""
+    db = SessionLocal()
+    try:
+        # Reset all simulator configs to not running
+        configs = db.query(SCADASimulatorConfig).all()
+        for config in configs:
+            config.is_running = False
+            config.updated_at = datetime.utcnow()
+        db.commit()
+        print("✓ Simulator state reset on startup")
+    except Exception as e:
+        print(f"✗ Failed to reset simulator state: {e}")
+    finally:
+        db.close()
 
 @app.get("/")
 async def root():

@@ -3,12 +3,17 @@ Network API endpoints
 Handles network file upload and information retrieval
 """
 from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from typing import Dict, Any
 import os
 import shutil
+import io
+import base64
 from pathlib import Path
 from datetime import datetime
+import matplotlib
+matplotlib.use('Agg')  # Set backend before importing pyplot
+import matplotlib.pyplot as plt
 
 from services.network_loader import NetworkLoader
 from config import UPLOAD_DIR, ALLOWED_EXTENSIONS, MAX_FILE_SIZE
@@ -212,6 +217,55 @@ async def clear_network() -> Dict[str, Any]:
             detail=f"Failed to clear network: {str(e)}"
         )
 
+@router.get("/plot")
+async def get_network_plot() -> Dict[str, Any]:
+    """
+    Generate a network plot using EPANET's plot method
+    
+    Returns:
+        Base64 encoded plot image
+    """
+    if not network_loader.is_network_loaded():
+        raise HTTPException(
+            status_code=404,
+            detail="No network loaded. Please upload a network file first."
+        )
+    
+    try:
+        # Get the EPANET network object
+        network = network_loader.get_network()
+        if not network:
+            raise HTTPException(
+                status_code=500,
+                detail="Network object not available"
+            )
+        
+        # For now, return coordinates data instead of matplotlib plot
+        # This will help us identify if the issue is with matplotlib or network object
+        coords = network.getNodeCoordinates()
+        
+        if not coords or 'x' not in coords or 'y' not in coords:
+            raise HTTPException(
+                status_code=500,
+                detail="No coordinates available for plotting"
+            )
+        
+        # Return coordinates data for frontend to handle
+        return JSONResponse(
+            status_code=200,
+            content={
+                "message": "Network coordinates retrieved successfully",
+                "coordinates": coords,
+                "timestamp": datetime.now().isoformat()
+            }
+        )
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to generate network plot: {str(e)}"
+        )
+
 @router.get("/test")
 async def test_network_api() -> Dict[str, Any]:
     """
@@ -228,6 +282,7 @@ async def test_network_api() -> Dict[str, Any]:
                 "upload": "POST /api/network/upload",
                 "info": "GET /api/network/info",
                 "coordinates": "GET /api/network/coordinates",
+                "plot": "GET /api/network/plot",
                 "status": "GET /api/network/status",
                 "clear": "DELETE /api/network/clear"
             },

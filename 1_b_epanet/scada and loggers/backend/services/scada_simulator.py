@@ -51,9 +51,13 @@ class SCADASimulator:
                 self._config.updated_at = datetime.utcnow()
                 db.commit()
             
-            # Check if network is loaded using global state
+            # Check if network is loaded - REQUIRED before starting simulation
             if not network_state.is_loaded:
-                return {"message": "No network loaded. Please upload a network file first.", "success": False}
+                logger.warning("Cannot start simulator: No network file loaded")
+                return {
+                    "message": "No network loaded. Please upload a network file first.", 
+                    "success": False
+                }
             
             # Start the simulation task
             self._running = True
@@ -204,9 +208,8 @@ class SCADASimulator:
             
             # Check if baseline is established
             if not baseline_engine.is_baseline_established():
-                logger.warning("Baseline not established, using fallback data generation")
-                await self._generate_fallback_data(db)
-                return
+                logger.error("Baseline not established - cannot generate SCADA data")
+                raise Exception("Baseline not established. Please establish baseline first.")
             
             # Generate SCADA data based on baseline + realistic variations
             await self._generate_baseline_based_data(db, current_time)
@@ -455,62 +458,6 @@ class SCADASimulator:
                 )
                 db.add(reading)
     
-    async def _generate_fallback_data(self, db):
-        """Fallback to basic simulation if EPANET fails"""
-        logger.warning("Using fallback data generation due to EPANET simulation failure")
-        
-        network = network_state.current_network
-        junction_ids = network.getNodeJunctionNameID()
-        pump_ids = network.getLinkPumpNameID()
-        tank_ids = network.getNodeTankNameID()
-        
-        # Generate basic pressure readings (still better than completely random)
-        for junction_id in junction_ids:
-            # More realistic pressure range based on typical water systems
-            base_pressure = 40.0 + random.uniform(-5, 15)  # 35-55 psi
-            
-            # Add variation based on config
-            variation = random.uniform(-self._config.pressure_variation, self._config.pressure_variation)
-            pressure = base_pressure * (1 + variation)
-            
-            reading = SCADAReading(
-                node_id=junction_id,
-                sensor_type="pressure",
-                value=round(pressure, 2),
-                unit="psi",
-                quality="good"
-            )
-            db.add(reading)
-        
-        # Generate basic flow readings
-        for pump_id in pump_ids:
-            base_flow = 80.0 + random.uniform(-15, 25)  # 65-105 gpm
-            variation = random.uniform(-self._config.flow_variation, self._config.flow_variation)
-            flow = base_flow * (1 + variation)
-            
-            reading = SCADAReading(
-                node_id=pump_id,
-                sensor_type="flow",
-                value=round(flow, 2),
-                unit="gpm",
-                quality="good"
-            )
-            db.add(reading)
-        
-        # Generate basic tank levels
-        for tank_id in tank_ids:
-            base_level = 15.0 + random.uniform(-3, 5)  # 12-20 ft
-            variation = random.uniform(-self._config.level_variation, self._config.level_variation)
-            level = base_level * (1 + variation)
-            
-            reading = SCADAReading(
-                node_id=tank_id,
-                sensor_type="level",
-                value=round(level, 2),
-                unit="ft",
-                quality="good"
-            )
-            db.add(reading)
 
 # Global simulator instance
 scada_simulator = SCADASimulator()
