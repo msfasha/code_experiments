@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { networkAPI, NetworkCoordinates } from '../api/network';
+import { networkAPI } from '../api/network';
+import type { NetworkCoordinates } from '../api/network';
 
 const NetworkViewer: React.FC = () => {
   const [coordinates, setCoordinates] = useState<NetworkCoordinates | null>(null);
@@ -114,7 +115,7 @@ const NetworkViewer: React.FC = () => {
             
             {/* Node connections (simplified - just show all possible connections) */}
             {nodeData.map((node, i) => 
-              nodeData.slice(i + 1).map((otherNode, j) => (
+              nodeData.slice(i + 1).map((otherNode, _j) => (
                 <line
                   key={`${node.id}-${otherNode.id}`}
                   x1={transformX(node.x)}

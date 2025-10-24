@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { networkAPI, NetworkInfo as NetworkInfoType } from '../api/network';
+import { networkAPI } from '../api/network';
+import type { NetworkInfo as NetworkInfoType } from '../api/network';
 
 const NetworkInfo: React.FC = () => {
   const [networkInfo, setNetworkInfo] = useState<NetworkInfoType | null>(null);

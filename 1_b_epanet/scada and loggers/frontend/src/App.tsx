@@ -189,6 +189,41 @@ const NetworkPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Fetch network info when component loads
+  useEffect(() => {
+    const fetchNetworkInfo = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('http://localhost:8000/api/network/info');
+        if (response.data.success) {
+          setNetworkInfo(response.data);
+        }
+      } catch (err: any) {
+        console.log('No network loaded yet:', err.message);
+        // Don't set error for this - it's normal if no network is loaded
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNetworkInfo();
+  }, []);
+
+  const refreshNetworkInfo = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await axios.get('http://localhost:8000/api/network/info');
+      if (response.data.success) {
+        setNetworkInfo(response.data);
+      }
+    } catch (err: any) {
+      setError('Failed to load network information');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -217,9 +252,27 @@ const NetworkPage = () => {
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-      <h1 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#1f2937' }}>
-        Network Configuration
-      </h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <h1 style={{ fontSize: '2rem', color: '#1f2937', margin: 0 }}>
+          Network Configuration
+        </h1>
+        <button
+          onClick={refreshNetworkInfo}
+          disabled={loading}
+          style={{
+            backgroundColor: '#3b82f6',
+            color: 'white',
+            padding: '0.5rem 1rem',
+            border: 'none',
+            borderRadius: '0.375rem',
+            fontSize: '0.875rem',
+            cursor: loading ? 'not-allowed' : 'pointer',
+            opacity: loading ? 0.5 : 1
+          }}
+        >
+          {loading ? 'Loading...' : '🔄 Refresh'}
+        </button>
+      </div>
 
       <div style={{
         backgroundColor: 'white',

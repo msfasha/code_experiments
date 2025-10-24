@@ -1,5 +1,0 @@
----
-alwaysApply: true
----
-Always document any design or architectural changes back into CLAUDE.md file for future references.
-We will CLAUDE.md as a source of truth for the interactions between me and you.

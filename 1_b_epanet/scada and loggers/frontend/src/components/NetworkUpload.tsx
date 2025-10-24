@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { networkAPI, UploadResponse } from '../api/network';
+import { networkAPI } from '../api/network';
+import type { UploadResponse } from '../api/network';
 
 interface NetworkUploadProps {
   onUpload: () => void;

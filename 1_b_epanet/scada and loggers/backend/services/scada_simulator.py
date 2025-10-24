@@ -29,7 +29,7 @@ class SCADASimulator:
     def is_running(self) -> bool:
         return self._running
     
-    async def start(self, config: Dict[str, Any] = None) -> Dict[str, Anyr]:
+    async def start(self, config: Dict[str, Any] = None) -> Dict[str, Any]:
         """Start the SCADA simulator"""
         if self._running:
             return {"message": "Simulator already running", "success": False}
