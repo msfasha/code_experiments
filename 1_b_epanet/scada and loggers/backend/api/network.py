@@ -7,13 +7,8 @@ from fastapi.responses import JSONResponse, Response
 from typing import Dict, Any
 import os
 import shutil
-import io
-import base64
 from pathlib import Path
 from datetime import datetime
-import matplotlib
-matplotlib.use('Agg')  # Set backend before importing pyplot
-import matplotlib.pyplot as plt
 
 from services.network_loader import NetworkLoader
 from config import UPLOAD_DIR, ALLOWED_EXTENSIONS, MAX_FILE_SIZE
@@ -217,13 +212,13 @@ async def clear_network() -> Dict[str, Any]:
             detail=f"Failed to clear network: {str(e)}"
         )
 
-@router.get("/plot")
-async def get_network_plot() -> Dict[str, Any]:
+@router.get("/data")
+async def get_network_data() -> Dict[str, Any]:
     """
-    Generate a network plot using EPANET's plot method
+    Get raw network data for client-side plotting
     
     Returns:
-        Base64 encoded plot image
+        Network data including coordinates, connectivity, and metadata
     """
     if not network_loader.is_network_loaded():
         raise HTTPException(
@@ -240,30 +235,55 @@ async def get_network_plot() -> Dict[str, Any]:
                 detail="Network object not available"
             )
         
-        # For now, return coordinates data instead of matplotlib plot
-        # This will help us identify if the issue is with matplotlib or network object
-        coords = network.getNodeCoordinates()
-        
-        if not coords or 'x' not in coords or 'y' not in coords:
+        # Extract network data for client-side plotting
+        try:
+            # Get node coordinates
+            coords = network.getNodeCoordinates()
+            
+            # Get node information
+            node_ids = network.getNodeNameID()
+            node_types = network.getNodeType()
+            
+            # Get link information
+            link_ids = network.getLinkNameID()
+            link_types = network.getLinkType()
+            
+            # Get connectivity data
+            connectivity = []
+            for i in range(len(link_ids)):
+                from_node = network.getLinkConnections()[i][0]
+                to_node = network.getLinkConnections()[i][1]
+                connectivity.append({
+                    "link_id": link_ids[i],
+                    "link_type": link_types[i],
+                    "from_node": from_node,
+                    "to_node": to_node
+                })
+            
+            return JSONResponse(
+                status_code=200,
+                content={
+                    "message": "Network data retrieved successfully",
+                    "coordinates": coords,
+                    "node_ids": node_ids,
+                    "node_types": node_types,
+                    "link_ids": link_ids,
+                    "link_types": link_types,
+                    "connectivity": connectivity,
+                    "timestamp": datetime.now().isoformat()
+                }
+            )
+            
+        except Exception as e:
             raise HTTPException(
                 status_code=500,
-                detail="No coordinates available for plotting"
+                detail=f"Failed to extract network data: {str(e)}"
             )
-        
-        # Return coordinates data for frontend to handle
-        return JSONResponse(
-            status_code=200,
-            content={
-                "message": "Network coordinates retrieved successfully",
-                "coordinates": coords,
-                "timestamp": datetime.now().isoformat()
-            }
-        )
         
     except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail=f"Failed to generate network plot: {str(e)}"
+            detail=f"Failed to get network data: {str(e)}"
         )
 
 @router.get("/test")
@@ -282,7 +302,7 @@ async def test_network_api() -> Dict[str, Any]:
                 "upload": "POST /api/network/upload",
                 "info": "GET /api/network/info",
                 "coordinates": "GET /api/network/coordinates",
-                "plot": "GET /api/network/plot",
+                "data": "GET /api/network/data",
                 "status": "GET /api/network/status",
                 "clear": "DELETE /api/network/clear"
             },

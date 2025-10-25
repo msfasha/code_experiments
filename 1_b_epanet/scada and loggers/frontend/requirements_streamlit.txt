@@ -1,0 +1,34 @@
+# Streamlit Frontend Requirements
+# Water Network Monitoring System
+
+# Core Streamlit
+streamlit>=1.28.0
+streamlit-option-menu>=0.3.6
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# EPyT for client-side network plotting
+epyt>=0.0.1
+
+# Visualization
+matplotlib>=3.7.0
+plotly>=5.15.0
+seaborn>=0.12.0
+
+# HTTP Client
+requests>=2.31.0
+urllib3>=2.0.0
+
+# Data Export
+openpyxl>=3.1.0
+xlsxwriter>=3.1.0
+
+# Utilities
+python-dateutil>=2.8.0
+pytz>=2023.3
+
+# Optional: Enhanced UI
+streamlit-aggrid>=0.3.4
+streamlit-plotly-events>=0.0.6
